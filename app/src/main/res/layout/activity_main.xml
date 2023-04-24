@@ -61,6 +61,14 @@
             android:textColor="?attr/colorControlNormal"/>
 
         <Button
+            android:id="@+id/BTN_reset_password"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="¿No tienes cuenta?" />
+
+        <Button
             android:id="@+id/BTN_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
