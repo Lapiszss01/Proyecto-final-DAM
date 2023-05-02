@@ -1,9 +1,11 @@
-package com.example.proyectofinaldam;
+package com.example.proyectofinaldam.data.sql;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.proyectofinaldam.data.model.Usuario;
 
 import java.util.ArrayList;
 
@@ -15,7 +17,7 @@ public class datosUsuario {
 
     SQLiteDatabase sql;
     String bd = "BDUsuarios";
-    String tabla = "create table usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text)";
+    String tabla = "create table if not exists usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text,email text)";
 
     public datosUsuario(Context c){
         this.c=c;
@@ -31,6 +33,7 @@ public class datosUsuario {
             cv.put("pass",u.getPassword());
             cv.put("nombre",u.getNombre());
             cv.put("ap",u.getApellidos());
+            cv.put("email",u.getEmail());
             return (sql.insert("usuario",null,cv)>0);
         }else {return false;}
     }
@@ -62,6 +65,7 @@ public class datosUsuario {
                 u.setPassword(cursor.getString(2));
                 u.setNombre(cursor.getString(3));
                 u.setApellidos(cursor.getString(4));
+                u.setEmail(cursor.getString(5));
                 lista.add(u);
 
             }while (cursor.moveToNext());

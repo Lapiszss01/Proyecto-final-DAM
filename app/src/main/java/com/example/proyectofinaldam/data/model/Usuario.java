@@ -1,8 +1,8 @@
-package com.example.proyectofinaldam;
+package com.example.proyectofinaldam.data.model;
 
 public class Usuario {
     int id;
-    String nombre, apellidos, usuario, password;
+    String nombre, apellidos, usuario, password,email;
 
     public Usuario(){
 
@@ -63,5 +63,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
