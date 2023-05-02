@@ -73,4 +73,38 @@ public class datosUsuario {
         return lista;
     }
 
+    public int login(String u, String p){
+
+        int a = 0;
+        Cursor cursor = sql.rawQuery("select * from usuario",null);
+        if (cursor!=null&&cursor.moveToFirst()){
+            do {
+
+                if(cursor.getString(1).equals(u)&&cursor.getString(2).equals(p)){
+                    a++;
+                }
+
+            }while (cursor.moveToNext());
+        }
+        return a;
+    }
+
+    public Usuario getUsuario(String u, String p){
+        lista = selectUsuario();
+        for (Usuario us :lista) {
+            if(us.getUsuario().equals(u)&&us.getPassword().equals(p)){
+                return us;
+            }
+        }
+        return null;
+    }
+    public Usuario getUsuarioById(int id){
+        lista = selectUsuario();
+        for (Usuario us :lista) {
+            if(us.getId() == id){
+                return us;
+            }
+        }
+        return null;
+    }
 }
