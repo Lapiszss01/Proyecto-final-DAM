@@ -91,7 +91,7 @@
         app:strokeColor="#4E4E4E"
         app:strokeWidth="1dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,10 +140,10 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/viewWeight"
         android:layout_width="0dp"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         app:strokeColor="#4E4E4E"
         app:strokeWidth="1dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@+id/cvFem"
@@ -160,6 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peso"
+                android:textStyle=""
                 android:textAllCaps="true"
                 android:textSize="24dp">
 
@@ -181,10 +182,10 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvAge"
         android:layout_width="0dp"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         app:strokeColor="#4E4E4E"
         app:strokeWidth="1dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,7 +210,7 @@
             <EditText
                 android:gravity="center"
                 android:width="100dp"
-                android:id="@+id/tvWeight"
+                android:id="@+id/etAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="38sp"
@@ -221,12 +222,94 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:id="@+id/cvActividadFisica"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:strokeColor="#4E4E4E"
+        app:strokeWidth="1dp"
         app:layout_constraintTop_toBottomOf="@+id/viewWeight"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="15dp">
 
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividad fisica"
+                android:textAllCaps="true"
+                android:textSize="24dp"
+                android:layout_gravity="center">
+
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sin actividad"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Poca actividad"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Medianamente activo"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Altamente activo"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="24dp"
+                android:text="No haces ejercicio físico"/>
+        </RadioGroup>
     </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@+id/cvActividadFisica"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="Registrarse" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

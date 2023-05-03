@@ -48,22 +48,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 u.setEmail(email.getText().toString());
                 u.setUsuario(us.getText().toString());
 
-                if(!u.isNull()){
+                if(email.getText().toString().isEmpty()||pass.getText().toString().isEmpty()||us.getText().toString().isEmpty()||confPass.getText().toString().isEmpty()||nom.getText().toString().isEmpty()||ap.getText().toString().isEmpty()){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
-                }else if(dao.insertUsuario(u)){
-                    if(!pass.getText().toString().equals(confPass.getText().toString())){
-                        Toast.makeText(this,"Las contraseñas deben ser iguales",Toast.LENGTH_LONG).show();
+                }else if(!pass.getText().toString().equals(confPass.getText().toString())){
+                    Toast.makeText(this,"Las contraseñas deben ser iguales",Toast.LENGTH_LONG).show();
                     } else{
                         Intent i = new Intent(RegisterActivity.this, RegisterAvanzadoActivity.class);
+                        i.putExtra("Nombre", nom.getText().toString());
+                        i.putExtra("Apellidos", ap.getText().toString());
+                        i.putExtra("Contraseña", pass.getText().toString());
+                        i.putExtra("Usuario", us.getText().toString());
+                        i.putExtra("Email", email.getText().toString());
                         startActivity(i);
-                        Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
                         finish();
                     }
-
-                }else{
-                    Toast.makeText(this,"Usuario ya registrado",Toast.LENGTH_LONG).show();
-                }
-
                 break;
         }
     }

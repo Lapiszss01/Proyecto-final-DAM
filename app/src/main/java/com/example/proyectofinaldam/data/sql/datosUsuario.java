@@ -17,7 +17,7 @@ public class datosUsuario {
 
     SQLiteDatabase sql;
     String bd = "BDUsuarios";
-    String tabla = "create table if not exists usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text,email text)";
+    String tabla = "create table if not exists usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text,email text,genero integer,altura integer,peso integer,edad integer,actividadF integer)";
 
     public datosUsuario(Context c){
         this.c=c;
@@ -34,6 +34,11 @@ public class datosUsuario {
             cv.put("nombre",u.getNombre());
             cv.put("ap",u.getApellidos());
             cv.put("email",u.getEmail());
+            cv.put("genero",u.getGenero());
+            cv.put("altura",u.getAltura());
+            cv.put("peso",u.getPeso());
+            cv.put("edad",u.getEdad());
+            cv.put("actividadF",u.getActividadF());
             return (sql.insert("usuario",null,cv)>0);
         }else {return false;}
     }
@@ -62,6 +67,11 @@ public class datosUsuario {
                 u.setNombre(cursor.getString(3));
                 u.setApellidos(cursor.getString(4));
                 u.setEmail(cursor.getString(5));
+                u.setGenero(cursor.getInt(6));
+                u.setAltura(cursor.getInt(7));
+                u.setPeso(cursor.getInt(8));
+                u.setEdad(cursor.getInt(9));
+                u.setActividadF(cursor.getInt(10));
                 lista.add(u);
             }while (cursor.moveToNext());
         }

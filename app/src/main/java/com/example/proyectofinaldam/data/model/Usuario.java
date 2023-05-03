@@ -4,6 +4,8 @@ public class Usuario {
     int id;
     String nombre, apellidos, usuario, password,email;
 
+    int genero,altura,peso,edad,actividadF;
+
     public Usuario(){
 
     }
@@ -22,6 +24,12 @@ public class Usuario {
                 ", apellidos='" + apellidos + '\'' +
                 ", usuario='" + usuario + '\'' +
                 ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", genero=" + genero +
+                ", altura=" + altura +
+                ", peso=" + peso +
+                ", edad=" + edad +
+                ", actividadF=" + actividadF +
                 '}';
     }
 
@@ -71,5 +79,45 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getGenero() {
+        return genero;
+    }
+
+    public void setGenero(int genero) {
+        this.genero = genero;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getActividadF() {
+        return actividadF;
+    }
+
+    public void setActividadF(int actividadF) {
+        this.actividadF = actividadF;
     }
 }

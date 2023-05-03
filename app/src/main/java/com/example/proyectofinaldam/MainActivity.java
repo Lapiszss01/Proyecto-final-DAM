@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.proyectofinaldam.data.sql.datosUsuario;
 import com.example.proyectofinaldam.ui.RegisterActivity;
+import com.example.proyectofinaldam.ui.RegisterAvanzadoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,10 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRegisto.setOnClickListener(this);
 
         dao = new datosUsuario(this);
-
-
-
-
 
     }
 
