@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.proyectofinaldam.data.model.Usuario;
 import com.example.proyectofinaldam.data.sql.datosUsuario;
+import com.example.proyectofinaldam.ui.MainHubActivity;
 import com.example.proyectofinaldam.ui.RegisterActivity;
 import com.example.proyectofinaldam.ui.RegisterAvanzadoActivity;
 
@@ -50,7 +52,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(u.equals("")&&p.equals("")){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
                 }else if(dao.login(u,p)==1){
+                    Usuario user = dao.getUsuario(u,p);
                     Toast.makeText(this,"Login funcional",Toast.LENGTH_LONG).show();
+                    Intent i2 = new Intent(MainActivity.this, MainHubActivity.class);
+                    i2.putExtra("Id", user.getId());
+                    startActivity(i2);
                 } else{
                     Toast.makeText(this,"Datos erroneos",Toast.LENGTH_LONG).show();
                 }
