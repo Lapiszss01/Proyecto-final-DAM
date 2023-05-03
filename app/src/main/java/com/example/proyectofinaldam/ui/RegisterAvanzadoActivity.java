@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
@@ -21,6 +22,8 @@ import com.google.android.material.slider.RangeSlider;
 public class RegisterAvanzadoActivity extends AppCompatActivity implements View.OnClickListener {
 
     public String nombre,apellido,usuario,email,contraseña;
+    public boolean mascSeleccionado = true;
+    public boolean femSeleccionado = false;
 
     public EditText peso,edad;
     public RangeSlider rs;
@@ -37,19 +40,25 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
         edad = (EditText) findViewById(R.id.etAge);
         rs = (RangeSlider) findViewById(R.id.rsHeight);
         cvMale = (MaterialCardView) findViewById(R.id.cvMasc);
+        cvMale.setOnClickListener(this);
         cvFemale = (MaterialCardView) findViewById(R.id.cvFem);
+        cvFemale.setOnClickListener(this);
         btnRegistro = (Button) findViewById(R.id.btnRegister);
         btnRegistro.setOnClickListener(this);
         dao = new datosUsuario(this);
 
+        /*
         Bundle b = getIntent().getExtras();
         nombre = b.getString("Nombre");
         apellido = b.getString("Apellidos");
         usuario = b.getString("Usuario");
         email = b.getString("Email");
         contraseña = b.getString("Contraseña");
+        */
 
         Log.d("Datos","Nombre: "+nombre+" Apellido: "+apellido+" Us: "+usuario+" Email: "+email+" Cont: "+contraseña);
+
+        setGenderColor();
 
     }
 
@@ -82,6 +91,16 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
                     finish();
                 }
                 break;
+            case R.id.cvMasc:
+                changeGenderColor();
+                setGenderColor();
+
+                break;
+            case R.id.cvFem:
+                changeGenderColor();
+                setGenderColor();
+
+                break;
         }
     }
 
@@ -90,7 +109,39 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     }
 
     private int obtenGenero() {
-        return 0;
+        if(mascSeleccionado){
+            return 0;
+        } else{
+            return 1;
+        }
+    }
+
+    private void setGenderColor(){
+
+        cvMale.setCardBackgroundColor(getBackgroundColor(mascSeleccionado));
+        cvFemale.setCardBackgroundColor(getBackgroundColor(femSeleccionado));
+
+    }
+
+    private void changeGenderColor(){
+
+        mascSeleccionado = !mascSeleccionado;
+        femSeleccionado = !femSeleccionado;
+
+    }
+
+    private int getBackgroundColor(boolean isSelectedComponent){
+
+        int colorReference = 0;
+
+        if(isSelectedComponent){
+            colorReference = R.color.dark_grey;
+        } else {
+            colorReference = R.color.white;
+        }
+
+        return ContextCompat.getColor(this,colorReference);
+
     }
 
 }
