@@ -1,5 +1,6 @@
 package com.example.proyectofinaldam.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Usuario;
 import com.example.proyectofinaldam.data.sql.datosUsuario;
@@ -52,6 +54,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     if(!pass.getText().toString().equals(confPass.getText().toString())){
                         Toast.makeText(this,"Las contraseñas deben ser iguales",Toast.LENGTH_LONG).show();
                     } else{
+                        Intent i = new Intent(RegisterActivity.this, RegisterAvanzadoActivity.class);
+                        startActivity(i);
                         Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
                         finish();
                     }
