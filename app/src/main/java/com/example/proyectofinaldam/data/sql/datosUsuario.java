@@ -42,13 +42,10 @@ public class datosUsuario {
         int x=0;
         lista = selectUsuario();
         for (Usuario us:lista){
-
             if(us.getUsuario().equals(u)){
                 x++;
             }
-
         }
-
         return x;
     }
 
@@ -58,7 +55,6 @@ public class datosUsuario {
         Cursor cursor = sql.rawQuery("select * from usuario",null);
         if (cursor!=null&&cursor.moveToFirst()){
             do {
-
                 Usuario u = new Usuario();
                 u.setId(cursor.getInt(0));
                 u.setUsuario(cursor.getString(1));
@@ -67,7 +63,6 @@ public class datosUsuario {
                 u.setApellidos(cursor.getString(4));
                 u.setEmail(cursor.getString(5));
                 lista.add(u);
-
             }while (cursor.moveToNext());
         }
         return lista;
@@ -79,11 +74,9 @@ public class datosUsuario {
         Cursor cursor = sql.rawQuery("select * from usuario",null);
         if (cursor!=null&&cursor.moveToFirst()){
             do {
-
                 if(cursor.getString(1).equals(u)&&cursor.getString(2).equals(p)){
                     a++;
                 }
-
             }while (cursor.moveToNext());
         }
         return a;

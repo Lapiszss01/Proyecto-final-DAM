@@ -49,8 +49,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 if(!u.isNull()){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
                 }else if(dao.insertUsuario(u)){
-                    Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
-                    finish();
+                    if(!pass.getText().toString().equals(confPass.getText().toString())){
+                        Toast.makeText(this,"Las contraseñas deben ser iguales",Toast.LENGTH_LONG).show();
+                    } else{
+                        Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+
                 }else{
                     Toast.makeText(this,"Usuario ya registrado",Toast.LENGTH_LONG).show();
                 }
