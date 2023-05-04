@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Ejercicio"
+        android:icon="@drawable/ic_ejercicio"
+        android:id="@+id/menuEj"/>
+    <item android:title="Alimentacion"
+        android:icon="@drawable/ic_food"
+        android:id="@+id/menuAlim"/>
+    <item android:title="Perfil"
+        android:icon="@drawable/ic_profile"
+        android:id="@+id/menuPerf"/>
+    <item android:title="Configuracion"
+        android:icon="@drawable/ic_preferencias"
+        android:id="@+id/menuPref"/>
+</menu>

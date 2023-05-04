@@ -9,7 +9,7 @@ import com.example.proyectofinaldam.data.model.Usuario;
 
 import java.util.ArrayList;
 
-public class datosUsuario {
+public class DatosUsuario {
 
     Context c;
     Usuario u;
@@ -19,7 +19,7 @@ public class datosUsuario {
     String bd = "BDUsuarios";
     String tabla = "create table if not exists usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text,email text,genero integer,altura integer,peso integer,edad integer,actividadF integer)";
 
-    public datosUsuario(Context c){
+    public DatosUsuario(Context c){
         this.c=c;
         sql = c.openOrCreateDatabase(bd,c.MODE_PRIVATE,null);
         sql.execSQL(tabla);

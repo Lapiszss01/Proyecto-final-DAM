@@ -19,12 +19,9 @@ import androidx.core.content.ContextCompat;
 import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Usuario;
-import com.example.proyectofinaldam.data.sql.datosUsuario;
+import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.slider.RangeSlider;
-import com.google.android.material.slider.Slider;
-
-import org.w3c.dom.Text;
 
 public class RegisterAvanzadoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,7 +38,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     public RangeSlider rs;
     public CardView cvMale, cvFemale;
     Button btnRegistro;
-    datosUsuario dao;
+    DatosUsuario dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +68,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
         rb2.setOnClickListener(this);
         rb3 = (RadioButton) findViewById(R.id.radioButton3);
         rb3.setOnClickListener(this);
-        dao = new datosUsuario(this);
+        dao = new DatosUsuario(this);
         rs.addOnChangeListener(new RangeSlider.OnChangeListener() {
             @Override
             public void onValueChange(@NonNull RangeSlider slider, float value, boolean fromUser) {
@@ -128,15 +125,10 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
             case R.id.cvMasc:
                 changeGenderColor();
                 setGenderColor();
-                Log.d("a","Masc "+mascSeleccionado);
-                Log.d("a","Fem "+femSeleccionado);
-
                 break;
             case R.id.cvFem:
                 changeGenderColor();
                 setGenderColor();
-                Log.d("a","Masc "+mascSeleccionado);
-                Log.d("a","Fem "+femSeleccionado);
                 break;
 
             case R.id.radioButton0:

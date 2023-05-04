@@ -9,16 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Usuario;
-import com.example.proyectofinaldam.data.sql.datosUsuario;
+import com.example.proyectofinaldam.data.sql.DatosUsuario;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText us, pass,confPass, nom, ap,email;
     Button btnRegisto;
-    datosUsuario dao;
+    DatosUsuario dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         ap = (EditText) findViewById(R.id.etApellidos);
         btnRegisto = (Button) findViewById(R.id.btnRegister);
         btnRegisto.setOnClickListener(this);
-        dao = new datosUsuario(this);
+        dao = new DatosUsuario(this);
 
     }
 

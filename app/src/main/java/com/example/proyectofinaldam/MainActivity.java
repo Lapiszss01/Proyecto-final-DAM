@@ -10,16 +10,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.proyectofinaldam.data.model.Usuario;
-import com.example.proyectofinaldam.data.sql.datosUsuario;
+import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.example.proyectofinaldam.ui.MainHubActivity;
 import com.example.proyectofinaldam.ui.RegisterActivity;
-import com.example.proyectofinaldam.ui.RegisterAvanzadoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnRegisto, btnLogin;
     EditText user, pass;
-    datosUsuario dao;
+    DatosUsuario dao;
 
 
     @Override
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRegisto = (Button) findViewById(R.id.btnRegister);
         btnRegisto.setOnClickListener(this);
 
-        dao = new datosUsuario(this);
+        dao = new DatosUsuario(this);
 
     }
 
