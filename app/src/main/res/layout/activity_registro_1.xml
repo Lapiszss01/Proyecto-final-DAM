@@ -12,7 +12,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvMasc"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="16dp"
         app:strokeColor="#4E4E4E"
@@ -28,14 +28,14 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_male"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+
                 android:text="Masculino"
                 android:textAllCaps="true"
                 android:textSize="24dp">
@@ -52,7 +52,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvFem"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="16dp"
         app:strokeColor="#4E4E4E"
@@ -68,14 +68,14 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_female"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+
                 android:text="Femenino"
                 android:textAllCaps="true"
                 android:textSize="24dp">
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:text="Altura"
                 android:textAllCaps="true"
-                android:textSize="24dp">
+                android:textSize="20dp">
 
             </TextView>
 
@@ -234,7 +234,7 @@
 
 
 
-        <RadioGroup
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -255,19 +255,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton0"
+                <RadioGroup
+                    android:id="@+id/rg0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sin actividad"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Poca actividad"
-                    android:layout_weight="1"/>
+                    <RadioButton
+                        android:id="@+id/radioButton0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sin actividad"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Poca actividad"
+                        android:layout_weight="1" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -276,19 +284,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
+                <RadioGroup
+                    android:id="@+id/rg1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Medianamente activo"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Medianamente activo"
+                        android:layout_weight="1"/>
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Altamente activo"
-                    android:layout_weight="1"/>
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Altamente activo"
+                        android:layout_weight="1"/>
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -298,7 +312,7 @@
                 android:layout_gravity="center"
                 android:textSize="24dp"
                 android:text="No haces ejercicio físico"/>
-        </RadioGroup>
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <Button
