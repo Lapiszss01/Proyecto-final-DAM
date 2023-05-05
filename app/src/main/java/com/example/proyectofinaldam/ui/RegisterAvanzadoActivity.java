@@ -28,7 +28,8 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     public String nombre,apellido,usuario,email,contraseña;
     public boolean mascSeleccionado = true;
     public boolean femSeleccionado = false;
-    public int altura,actividadF;
+    public int altura = 120;
+    public int actividadF = -1;
 
     public RadioButton rb0,rb1,rb2,rb3;
     public RadioGroup rg0,rg1;
@@ -104,13 +105,13 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
 
                 u.setGenero(obtenGenero());
                 u.setAltura(altura);
-                u.setPeso(Integer.parseInt(peso.getText().toString()));
-                u.setEdad(Integer.parseInt(edad.getText().toString()));
+                if(!peso.getText().toString().equals("")){u.setPeso(Integer.parseInt(peso.getText().toString()));}
+                if(!edad.getText().toString().equals("")){u.setEdad(Integer.parseInt(edad.getText().toString()));}
                 u.setActividadF(actividadF);
 
                 Log.d("User","User: "+u.toString());
 
-                if(!u.isNull()){
+                if(!u.isNull()||peso.equals("")||edad.equals("")||actividadF == -1){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
                 }else if(dao.insertUsuario(u)){
                     Intent i = new Intent(RegisterAvanzadoActivity.this, MainActivity.class);
