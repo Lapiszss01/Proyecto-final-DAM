@@ -21,8 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.RegisterActivity"></activity>
-        <activity android:name=".ui.RegisterAvanzadoActivity"></activity>
+        <activity android:name=".ui.Login.RegisterActivity"></activity>
+        <activity android:name=".ui.Login.RegisterAvanzadoActivity"></activity>
         <activity android:name=".ui.MainHubActivity"></activity>
 
 

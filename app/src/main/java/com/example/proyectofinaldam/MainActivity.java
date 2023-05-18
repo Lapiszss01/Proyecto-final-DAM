@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.proyectofinaldam.data.model.Usuario;
 import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.example.proyectofinaldam.ui.MainHubActivity;
-import com.example.proyectofinaldam.ui.RegisterActivity;
+import com.example.proyectofinaldam.ui.Login.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 

@@ -1,4 +1,4 @@
-package com.example.proyectofinaldam.ui;
+package com.example.proyectofinaldam.ui.Alimento;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.proyectofinaldam.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EjercicioFragment#newInstance} factory method to
+ * Use the {@link AlimentoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EjercicioFragment extends Fragment {
+public class AlimentoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class EjercicioFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public EjercicioFragment() {
+    public AlimentoFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class EjercicioFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EjercicioFragment.
+     * @return A new instance of fragment AlimentoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EjercicioFragment newInstance(String param1, String param2) {
-        EjercicioFragment fragment = new EjercicioFragment();
+    public static AlimentoFragment newInstance(String param1, String param2) {
+        AlimentoFragment fragment = new AlimentoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class EjercicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ejercicio, container, false);
+        return inflater.inflate(R.layout.fragment_alimento, container, false);
     }
 }

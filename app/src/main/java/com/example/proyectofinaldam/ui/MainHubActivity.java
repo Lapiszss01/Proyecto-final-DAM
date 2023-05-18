@@ -12,8 +12,10 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Usuario;
 import com.example.proyectofinaldam.data.sql.DatosUsuario;
-import com.example.proyectofinaldam.databinding.ActivityMainBinding;
 import com.example.proyectofinaldam.databinding.ActivityMainHubBinding;
+import com.example.proyectofinaldam.ui.Alimento.AlimentoFragment;
+import com.example.proyectofinaldam.ui.Ejercicio.EjercicioFragment;
+import com.example.proyectofinaldam.ui.Login.PerfilFragment;
 
 public class MainHubActivity extends AppCompatActivity {
 
