@@ -1,11 +1,13 @@
 package com.example.proyectofinaldam.data.model;
 
-public class TaskCategory {
+public class Categorias {
 
     int type;
 
-    public TaskCategory(Boolean isSelected){
+
+    public Categorias(Boolean isSelected, int type){
         isSelected = true;
+        this.type = type;
     }
 
     public int getType() {

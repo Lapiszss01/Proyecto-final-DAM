@@ -1,11 +1,13 @@
 package com.example.proyectofinaldam.data.model;
 
-public class Task {
+public class Ejercicios {
     String nombre;
-    TaskCategory categoria;
+    Categorias categoria;
     Boolean isSelected = false;
 
-    public Task() {
+    public Ejercicios(String nombre, Categorias categoria) {
+        this.categoria = categoria;
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -16,11 +18,11 @@ public class Task {
         this.nombre = nombre;
     }
 
-    public TaskCategory getCategoria() {
+    public Categorias getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(TaskCategory categoria) {
+    public void setCategoria(Categorias categoria) {
         this.categoria = categoria;
     }
 
