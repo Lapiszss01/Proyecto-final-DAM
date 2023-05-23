@@ -78,6 +78,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
             }
         });
 
+        //Pilla los datos de la vista anterior
         Bundle b = getIntent().getExtras();
         nombre = b.getString("Nombre");
         apellido = b.getString("Apellidos");
@@ -96,6 +97,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnRegister:
+                //Al pulsar en registro pilla los datos puestos, comprueba que no haya más campos vacios e inserta el usuario en la base de datos
                 Usuario u = new Usuario();
                 u.setNombre(nombre);
                 u.setApellidos(apellido);

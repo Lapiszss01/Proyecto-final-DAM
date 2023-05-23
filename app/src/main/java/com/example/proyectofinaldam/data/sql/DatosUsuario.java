@@ -17,6 +17,7 @@ public class DatosUsuario {
 
     SQLiteDatabase sql;
     String bd = "BDUsuarios";
+    //Crea la base de datos
     String tabla = "create table if not exists usuario(id integer primary key autoincrement, usuario text, pass text, nombre text, ap text,email text,genero integer,altura integer,peso integer,edad integer,actividadF integer)";
 
     public DatosUsuario(Context c){
@@ -27,6 +28,7 @@ public class DatosUsuario {
     }
 
     public boolean insertUsuario(Usuario u){
+        //Inserta un usuario con las tablas que hay entre comillas
         if(buscar(u.getUsuario())==0){
             ContentValues cv = new ContentValues();
             cv.put("usuario",u.getUsuario());
@@ -44,6 +46,7 @@ public class DatosUsuario {
     }
 
     private int buscar(String u) {
+        //Busca un usuario en la bd
         int x=0;
         lista = selectUsuario();
         for (Usuario us:lista){
@@ -55,6 +58,7 @@ public class DatosUsuario {
     }
 
     public ArrayList<Usuario> selectUsuario(){
+        //Devuelve una lista con todos los Usuarios
         ArrayList<Usuario> lista = new ArrayList<Usuario>();
         lista.clear();
         Cursor cursor = sql.rawQuery("select * from usuario",null);
@@ -79,7 +83,7 @@ public class DatosUsuario {
     }
 
     public int login(String u, String p){
-
+        //Si el usuario y contraseña coinciden en la bd te deja loggear
         int a = 0;
         Cursor cursor = sql.rawQuery("select * from usuario",null);
         if (cursor!=null&&cursor.moveToFirst()){

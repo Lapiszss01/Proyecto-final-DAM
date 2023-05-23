@@ -32,6 +32,7 @@ public class MainHubActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new EjercicioFragment());
 
+        //Obtiene los datos de usuario
         Bundle b = getIntent().getExtras();
         id = b.getInt("Id");
         dao = new DatosUsuario(this);
@@ -64,6 +65,7 @@ public class MainHubActivity extends AppCompatActivity {
     }
 
     private void replaceFragment(Fragment fragment){
+        //Cambia la vista
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);

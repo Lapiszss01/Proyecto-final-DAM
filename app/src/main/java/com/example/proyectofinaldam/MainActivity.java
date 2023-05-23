@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.proyectofinaldam.data.model.Usuario;
+
 import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.example.proyectofinaldam.ui.MainHubActivity;
 import com.example.proyectofinaldam.ui.Login.RegisterActivity;
@@ -42,10 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnRegister:
+                // Al pulsar botón registro
                 Intent i = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(i);
                 break;
             case R.id.btnLogin:
+                // Al pulsar boton login
                 String u = user.getText().toString();
                 String p = pass.getText().toString();
                 if(u.equals("")&&p.equals("")){

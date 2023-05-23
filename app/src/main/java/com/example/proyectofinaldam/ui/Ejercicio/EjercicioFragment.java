@@ -34,9 +34,6 @@ public class EjercicioFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
     }
 
     @Override
@@ -44,16 +41,16 @@ public class EjercicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ejercicio, container, false);
 
+        //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
+
         rvCategorias = view.findViewById(R.id.rvCategories);
         rvCategorias.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //TODO Contexto¿?
         categoriasAdapter = new CategoriasAdapter(lista, requireContext());
         rvCategorias.setAdapter(categoriasAdapter);
         rvCategorias.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false));
 
         rvEjercicios = view.findViewById(R.id.rvTasks);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //TODO Contexto¿?
         ejerciciosAdapter = new EjerciciosAdapter(lista2,requireContext());
         rvEjercicios.setAdapter(ejerciciosAdapter);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));

@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnRegister:
+                //Cuando pulsas registrar pilla los datos de cada cuadro de texto
                 Usuario u = new Usuario();
                 u.setNombre(nom.getText().toString());
                 u.setApellidos(ap.getText().toString());
@@ -47,11 +48,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 u.setEmail(email.getText().toString());
                 u.setUsuario(us.getText().toString());
 
+                //Comprobacion de que ningún campo esté vacio
                 if(email.getText().toString().isEmpty()||pass.getText().toString().isEmpty()||us.getText().toString().isEmpty()||confPass.getText().toString().isEmpty()||nom.getText().toString().isEmpty()||ap.getText().toString().isEmpty()){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
                 }else if(!pass.getText().toString().equals(confPass.getText().toString())){
                     Toast.makeText(this,"Las contraseñas deben ser iguales",Toast.LENGTH_LONG).show();
                     } else{
+                        //Si ningún campo está vacio pasa los datos a la siguiente vista(Register activity)
                         Intent i = new Intent(RegisterActivity.this, RegisterAvanzadoActivity.class);
                         i.putExtra("Nombre", nom.getText().toString());
                         i.putExtra("Apellidos", ap.getText().toString());

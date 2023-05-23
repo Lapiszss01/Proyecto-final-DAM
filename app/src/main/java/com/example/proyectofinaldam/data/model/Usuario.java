@@ -1,6 +1,9 @@
 package com.example.proyectofinaldam.data.model;
 
 public class Usuario {
+
+    //Esto es básicamente un usuario con los datos que puede guardar
+
     int id;
     String nombre, apellidos, usuario, password,email;
 
