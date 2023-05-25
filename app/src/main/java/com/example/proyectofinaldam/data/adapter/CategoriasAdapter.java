@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,13 +15,15 @@ import com.example.proyectofinaldam.ui.Ejercicio.EjercicioCatViewHolder;
 
 import java.util.ArrayList;
 
-public class CategoriasAdapter extends RecyclerView.Adapter<EjercicioCatViewHolder> {
+public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.ViewHolder> {
 
     ArrayList<Categorias> lista;
     Context context;
     protected LayoutInflater inflador;
 
     protected View.OnClickListener onClickListener;
+
+
 
     public CategoriasAdapter(ArrayList<Categorias> lista, Context context) {
 
@@ -35,19 +38,31 @@ public class CategoriasAdapter extends RecyclerView.Adapter<EjercicioCatViewHold
 
     @NonNull
     @Override
-    public EjercicioCatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoriasAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_categoria,parent,false);
         view.setOnClickListener(onClickListener);
-        return new EjercicioCatViewHolder(view);
+        return new CategoriasAdapter.ViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull EjercicioCatViewHolder holder, int position) {
+
+
+    public void onBindViewHolder(CategoriasAdapter.ViewHolder holder, int position) {
 
         Categorias lista2 = lista.get(position);
-        /*holder.tituloTextView.setText(dataCancion.getTitulo());
-        holder.artistaTextView.setText(dataCancion.getArtista());
-        holder.albumTextView.setText(dataCancion.getAlbum());*/
+        holder.tvName.setText(lista.get(position).getNombre());
+
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        public TextView tvName;
+
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvName = itemView.findViewById(R.id.tvRutinaName);
+        }
+
 
     }
 

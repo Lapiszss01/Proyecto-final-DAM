@@ -55,9 +55,9 @@ public class EjercicioFragment extends Fragment {
         rvEjercicios.setAdapter(ejerciciosAdapter);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
 
-        Categorias Cat1 = new Categorias(true,0);
-        Categorias Cat2 = new Categorias(true,1);
-        Categorias Cat3 = new Categorias(true,2);
+        Categorias Cat1 = new Categorias(true,0,"Full Body");
+        Categorias Cat2 = new Categorias(true,1,"Piernas");
+        Categorias Cat3 = new Categorias(true,2,"Pecho");
         lista.add(Cat1);
         lista.add(Cat2);
         lista.add(Cat3);

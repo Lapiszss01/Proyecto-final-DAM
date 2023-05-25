@@ -9,5 +9,6 @@ public class EjercicioCatViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
 
+
     }
 }

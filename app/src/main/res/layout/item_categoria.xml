@@ -18,7 +18,7 @@
         android:layout_margin="8dp">
 
         <TextView
-            android:id="@+id/tvCategoryName"
+            android:id="@+id/tvRutinaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
