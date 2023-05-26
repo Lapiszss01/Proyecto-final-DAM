@@ -68,6 +68,9 @@ public class EjercicioFragment extends Fragment {
         lista2.add(Ej1);
         lista2.add(Ej2);
         lista2.add(Ej3);
+        lista2.add(Ej1);
+        lista2.add(Ej2);
+        lista2.add(Ej3);
 
         return view;
     }

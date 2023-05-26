@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="48dp"
+            android:layout_marginVertical="12dp"
             android:text="Bienvenido"
             android:textAllCaps="true"
             android:textSize="48dp"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:text="Categorias"
+            android:text="Rutinas"
             android:textAllCaps="true"
             android:textSize="24dp">
 
@@ -59,7 +59,8 @@
             android:id="@+id/rvTasks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp">
+            android:layout_marginHorizontal="16dp"
+            tools:listitem="@layout/item_ejercicio">
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 

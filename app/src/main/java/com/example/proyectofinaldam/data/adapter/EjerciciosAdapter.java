@@ -33,10 +33,7 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjercicioViewHolder>
 
         inflador = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-
     }
-
 
     @NonNull
     @Override
