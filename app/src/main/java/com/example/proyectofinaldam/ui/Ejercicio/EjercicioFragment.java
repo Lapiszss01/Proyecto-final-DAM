@@ -43,19 +43,6 @@ public class EjercicioFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ejercicio, container, false);
 
         //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
-
-        rvCategorias = view.findViewById(R.id.rvCategories);
-        rvCategorias.setLayoutManager(new LinearLayoutManager(getActivity()));
-        categoriasAdapter = new CategoriasAdapter(lista, requireContext());
-        rvCategorias.setAdapter(categoriasAdapter);
-        rvCategorias.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false));
-
-        rvEjercicios = view.findViewById(R.id.rvTasks);
-        rvEjercicios.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ejerciciosAdapter = new EjerciciosAdapter(lista2,requireContext());
-        rvEjercicios.setAdapter(ejerciciosAdapter);
-        rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
-
         Categorias Cat1 = new Categorias(true,0,"Full Body");
         Categorias Cat2 = new Categorias(true,1,"Piernas");
         Categorias Cat3 = new Categorias(true,2,"Pecho");
@@ -73,6 +60,20 @@ public class EjercicioFragment extends Fragment {
         lista2.add(Ej2);
         lista2.add(Ej3);
 
+        rvCategorias = view.findViewById(R.id.rvCategories);
+        rvCategorias.setLayoutManager(new LinearLayoutManager(getActivity()));
+        categoriasAdapter = new CategoriasAdapter(lista, requireContext());
+        rvCategorias.setAdapter(categoriasAdapter);
+        rvCategorias.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false));
+
+        //OnClick Position de las canciones
+
+        rvEjercicios = view.findViewById(R.id.rvTasks);
+        rvEjercicios.setLayoutManager(new LinearLayoutManager(getActivity()));
+        ejerciciosAdapter = new EjerciciosAdapter(lista2,requireContext());
+        rvEjercicios.setAdapter(ejerciciosAdapter);
+        rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
+
         return view;
     }
 
@@ -89,6 +90,20 @@ public class EjercicioFragment extends Fragment {
     }
 
     private void updateTask(){
+        /*ArrayList<Categorias> selectedCategories = null;
+        for (Categorias cat : lista){
+            if(cat.getSelected()){selectedCategories.add(cat);}
+        }
+        ArrayList<Ejercicios> nuevosEjs = null;
+        for(Ejercicios ejs : lista2){
+            for(int i = 0; i<selectedCategories.size(); i++){
+                if(ejs.getCategoria() == selectedCategories.get(i)){
+                    nuevosEjs.add(ejs);
+                }
+            }
+        }
+
+        ejerciciosAdapter.notifyDataSetChanged();*/
 
     }
 
