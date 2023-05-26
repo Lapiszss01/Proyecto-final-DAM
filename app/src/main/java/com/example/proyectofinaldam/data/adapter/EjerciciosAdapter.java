@@ -20,7 +20,7 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjercicioViewHolder>
 
     //Todos los adapters hacen que se vea la lista en la app
 
-    ArrayList<Ejercicios> lista;
+    public ArrayList<Ejercicios> lista;
     Context context;
     protected LayoutInflater inflador;
 

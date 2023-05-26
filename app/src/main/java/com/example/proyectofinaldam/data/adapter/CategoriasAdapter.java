@@ -1,12 +1,14 @@
 package com.example.proyectofinaldam.data.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectofinaldam.R;
@@ -48,19 +50,25 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Vi
 
     public void onBindViewHolder(CategoriasAdapter.ViewHolder holder, int position) {
 
-        Categorias lista2 = lista.get(position);
         holder.tvName.setText(lista.get(position).getNombre());
+
+        if(lista.get(position).getSelected()){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#8ECE9D"));
+        } else{
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#5A3D3D"));
+        }
 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView tvName;
-
+        public CardView cardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvRutinaName);
+            cardView = itemView.findViewById(R.id.cvCard);
         }
 
 
@@ -68,4 +76,9 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Vi
 
     @Override
     public int getItemCount() {return lista.size();}
+
+    public void setOnItemClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
 }
