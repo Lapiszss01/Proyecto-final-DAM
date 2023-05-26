@@ -89,13 +89,14 @@ public class EjercicioFragment extends Fragment {
     }
 
     private void updateTask(){
-        List<Categorias> selectedCategories =
+
     }
 
     /*private fun updateTask(){
         val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
         val newTasks = tasks.filter { selectedCategories.contains(it.category) }
         tasksAdapter.tasks = newTasks
+
         tasksAdapter.notifyDataSetChanged()
     }*/
 
