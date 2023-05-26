@@ -17,6 +17,7 @@ import com.example.proyectofinaldam.data.model.Categorias;
 import com.example.proyectofinaldam.data.model.Ejercicios;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class EjercicioFragment extends Fragment {
@@ -75,7 +76,28 @@ public class EjercicioFragment extends Fragment {
         return view;
     }
 
+    private void onItemSelected(int position){
+        boolean seleccionado = lista2.get(position).getSelected();
+        lista2.get(position).setSelected(!seleccionado);
+        updateTask();
+    }
 
+    private void updateCategories(int position){
+        boolean seleccionado = lista.get(position).getSelected();
+        lista.get(position).setSelected(!seleccionado);
+        updateTask();
+    }
+
+    private void updateTask(){
+        List<Categorias> selectedCategories =
+    }
+
+    /*private fun updateTask(){
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) }
+        tasksAdapter.tasks = newTasks
+        tasksAdapter.notifyDataSetChanged()
+    }*/
 
 
 }

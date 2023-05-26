@@ -4,9 +4,10 @@ public class Categorias {
 
     int type;
     String nombre;
+    boolean isSelected;
 
     public Categorias(Boolean isSelected, int type,String nombre){
-        isSelected = true;
+        this.isSelected = isSelected;
         this.type = type;
         this.nombre=nombre;
     }
@@ -25,5 +26,13 @@ public class Categorias {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public boolean getSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 }
