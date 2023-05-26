@@ -54,9 +54,9 @@ public class EjercicioFragment extends Fragment {
         lista.add(Cat2);
         lista.add(Cat3);
 
-        Ejercicios Ej1 = new Ejercicios("Peso",Cat1);
-        Ejercicios Ej2 = new Ejercicios("Peso2",Cat1);
-        Ejercicios Ej3 = new Ejercicios("Peso3",Cat2);
+        Ejercicios Ej1 = new Ejercicios("Peso",Cat1,R.drawable.large);
+        Ejercicios Ej2 = new Ejercicios("Peso2",Cat1,R.drawable.large);
+        Ejercicios Ej3 = new Ejercicios("Peso3",Cat2,R.drawable.large);
         lista2.add(Ej1);
         lista2.add(Ej2);
         lista2.add(Ej3);

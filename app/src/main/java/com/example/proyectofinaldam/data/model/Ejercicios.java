@@ -3,11 +3,14 @@ package com.example.proyectofinaldam.data.model;
 public class Ejercicios {
     String nombre;
     Categorias categoria;
+
+    int foto;
     Boolean isSelected = false;
 
-    public Ejercicios(String nombre, Categorias categoria) {
+    public Ejercicios(String nombre, Categorias categoria, int foto) {
         this.categoria = categoria;
         this.nombre = nombre;
+        this.foto = foto;
     }
 
     public String getNombre() {
@@ -32,5 +35,13 @@ public class Ejercicios {
 
     public void setSelected(Boolean selected) {
         isSelected = selected;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 }

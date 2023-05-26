@@ -4,8 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectofinaldam.R;
@@ -16,7 +19,7 @@ import com.example.proyectofinaldam.ui.Ejercicio.EjercicioViewHolder;
 
 import java.util.ArrayList;
 
-public class EjerciciosAdapter extends RecyclerView.Adapter<EjercicioViewHolder>{
+public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.ViewHolder>{
 
     //Todos los adapters hacen que se vea la lista en la app
 
@@ -37,19 +40,36 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjercicioViewHolder>
 
     @NonNull
     @Override
-    public EjercicioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EjerciciosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_ejercicio,parent,false);
         view.setOnClickListener(onClickListener);
-        return new EjercicioViewHolder(view);
+        return new EjerciciosAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EjercicioViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.iV.setImageResource(lista.get(position).getFoto());
     }
 
     @Override
     public int getItemCount() {
         return lista.size();
     }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        public TextView tvName;
+        public ImageView iV;
+        public CardView cardView;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvName = itemView.findViewById(R.id.tvRutinaName);
+            cardView = itemView.findViewById(R.id.cvCard);
+            iV = itemView.findViewById(R.id.iV);
+        }
+
+
+    }
+
 }
