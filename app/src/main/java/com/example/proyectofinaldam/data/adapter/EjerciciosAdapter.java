@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Categorias;
 import com.example.proyectofinaldam.data.model.Ejercicios;
-import com.example.proyectofinaldam.ui.Ejercicio.EjercicioCatViewHolder;
-import com.example.proyectofinaldam.ui.Ejercicio.EjercicioViewHolder;
 
 import java.util.ArrayList;
 
@@ -48,7 +46,11 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.tvName.setText(lista.get(position).getNombre());
         holder.iV.setImageResource(lista.get(position).getFoto());
+
+
+        holder.tvRepeticiones.setText(lista.get(position).getRepeticiones() + " repeticiones");
     }
 
     @Override
@@ -58,18 +60,23 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView tvName;
+        public TextView tvName, tvRepeticiones;
         public ImageView iV;
         public CardView cardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvRutinaName);
+            tvRepeticiones = itemView.findViewById(R.id.tvRepeticiones);
             cardView = itemView.findViewById(R.id.cvCard);
             iV = itemView.findViewById(R.id.iV);
         }
 
 
+    }
+
+    public void setOnItemClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
 
 }

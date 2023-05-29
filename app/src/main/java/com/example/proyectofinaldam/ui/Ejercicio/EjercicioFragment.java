@@ -79,6 +79,15 @@ public class EjercicioFragment extends Fragment {
         rvEjercicios = view.findViewById(R.id.rvTasks);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(getActivity()));
         ejerciciosAdapter = new EjerciciosAdapter(lista2,requireContext());
+
+        ejerciciosAdapter.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = rvCategorias.getChildAdapterPosition(v);
+                Log.d("Posicion", String.valueOf(position));
+            }
+        });
+
         rvEjercicios.setAdapter(ejerciciosAdapter);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
         return view;
@@ -88,30 +97,30 @@ public class EjercicioFragment extends Fragment {
     private void rellenaListas() {
 
         //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
-        Categorias Cat1 = new Categorias(false,0,"Todos los ejercicios");
+        Categorias Cat1 = new Categorias(true,0,"Todos los ejercicios");
         Categorias Cat2 = new Categorias(false,1,"Piernas");
         Categorias Cat3 = new Categorias(false,2,"Pecho");
-        Categorias Cat4 = new Categorias(false,2,"Pecho");
+        Categorias Cat4 = new Categorias(false,3,"Am");
         lista.add(Cat1);
         lista.add(Cat2);
         lista.add(Cat3);
         lista.add(Cat4);
 
         //00
-        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.drawable.large);
-        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.drawable.large);
-        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.drawable.large);
-        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.drawable.large);
-        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.drawable.large);
-        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.drawable.large);
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.raw.large,10);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.raw.large,10);
+        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.raw.large,10);
+        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.raw.large,10);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.raw.large,10);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.raw.large,10);
 
         //01
-        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.drawable.large);
+        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.raw.large,10);
 
         //02
-        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.drawable.large);
-        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.drawable.large);
-        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.drawable.large);
+        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.raw.large,10);
+        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.raw.large,10);
+        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.raw.large,10);
 
 
         lista2.add(Ej1);
@@ -124,7 +133,6 @@ public class EjercicioFragment extends Fragment {
         lista2.add(Ej8);
         lista2.add(Ej9);
         lista2.add(Ej10);
-
 
         /*RUTINA FULL BODY
                 -Prensa Pendular(ejercicio de pierna).
@@ -147,6 +155,13 @@ public class EjercicioFragment extends Fragment {
                 }
             }
         } else if(type == 1){
+            for(Ejercicios ejs : lista2){
+                if(ejs.getCategoria().getType() == type){
+                    nuevosEjs.add(ejs);
+                }
+            }
+        }
+        else if(type == 2){
             for(Ejercicios ejs : lista2){
                 if(ejs.getCategoria().getType() == type){
                     nuevosEjs.add(ejs);

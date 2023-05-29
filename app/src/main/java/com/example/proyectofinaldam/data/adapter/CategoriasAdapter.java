@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Categorias;
-import com.example.proyectofinaldam.ui.Ejercicio.EjercicioCatViewHolder;
+
 
 import java.util.ArrayList;
 
