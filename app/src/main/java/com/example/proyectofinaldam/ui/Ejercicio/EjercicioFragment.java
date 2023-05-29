@@ -46,23 +46,7 @@ public class EjercicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ejercicio, container, false);
 
-        //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
-        Categorias Cat1 = new Categorias(false,0,"Full Body");
-        Categorias Cat2 = new Categorias(false,1,"Piernas");
-        Categorias Cat3 = new Categorias(false,2,"Pecho");
-        lista.add(Cat1);
-        lista.add(Cat2);
-        lista.add(Cat3);
-
-        Ejercicios Ej1 = new Ejercicios("Peso",Cat1,R.drawable.large);
-        Ejercicios Ej2 = new Ejercicios("Peso2",Cat1,R.drawable.large);
-        Ejercicios Ej3 = new Ejercicios("Peso3",Cat2,R.drawable.large);
-        lista2.add(Ej1);
-        lista2.add(Ej2);
-        lista2.add(Ej3);
-        lista2.add(Ej1);
-        lista2.add(Ej2);
-        lista2.add(Ej3);
+        rellenaListas();
 
         rvCategorias = view.findViewById(R.id.rvCategories);
         rvCategorias.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -98,6 +82,57 @@ public class EjercicioFragment extends Fragment {
         rvEjercicios.setAdapter(ejerciciosAdapter);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
         return view;
+
+    }
+
+    private void rellenaListas() {
+
+        //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
+        Categorias Cat1 = new Categorias(false,0,"Todos los ejercicios");
+        Categorias Cat2 = new Categorias(false,1,"Piernas");
+        Categorias Cat3 = new Categorias(false,2,"Pecho");
+        Categorias Cat4 = new Categorias(false,2,"Pecho");
+        lista.add(Cat1);
+        lista.add(Cat2);
+        lista.add(Cat3);
+        lista.add(Cat4);
+
+        //00
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.drawable.large);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.drawable.large);
+        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.drawable.large);
+        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.drawable.large);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.drawable.large);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.drawable.large);
+
+        //01
+        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.drawable.large);
+
+        //02
+        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.drawable.large);
+        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.drawable.large);
+        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.drawable.large);
+
+
+        lista2.add(Ej1);
+        lista2.add(Ej2);
+        lista2.add(Ej3);
+        lista2.add(Ej4);
+        lista2.add(Ej5);
+        lista2.add(Ej6);
+        lista2.add(Ej7);
+        lista2.add(Ej8);
+        lista2.add(Ej9);
+        lista2.add(Ej10);
+
+
+        /*RUTINA FULL BODY
+                -Prensa Pendular(ejercicio de pierna).
+                -Flyes/Aperturas(ejercicio de pecho).
+                -Press militar(ejercicio de hombro).
+                -Remo(ejercicio de espalda).
+                -Curl de biceps con máquina.
+        -Extensión de triceps con cuerda.*/
 
     }
 
