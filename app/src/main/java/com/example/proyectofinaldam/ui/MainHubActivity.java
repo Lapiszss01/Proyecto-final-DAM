@@ -38,14 +38,14 @@ public class MainHubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainHubBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new EjercicioFragment(u));
+        replaceFragment(new EjercicioFragment(u,getPackageName()));
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
 
                 case R.id.menuEj:
-                    replaceFragment(new EjercicioFragment(u));
+                    replaceFragment(new EjercicioFragment(u,getPackageName()));
                     break;
                 case R.id.menuAlim:
                     replaceFragment(new AlimentoFragment(u));
@@ -58,6 +58,7 @@ public class MainHubActivity extends AppCompatActivity {
                     break;
 
             }
+
 
             return true;
         });

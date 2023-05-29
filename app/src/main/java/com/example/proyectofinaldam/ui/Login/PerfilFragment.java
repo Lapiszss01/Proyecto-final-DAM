@@ -25,11 +25,10 @@ public class PerfilFragment extends Fragment {
     Usuario u;
     TextView tvUser, tvEmail, tvWelcome;
 
+    public int sexo = 0;
     public PerfilFragment(Usuario u){
         this.u = u;
     }
-
-    //Nada por ahora
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,9 +41,16 @@ public class PerfilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
         tvWelcome = view.findViewById(R.id.TV_bienvenida);
-        tvWelcome.setText("aaa");
+
+        //TODO pedir genero en registro
+        if(sexo == 0){tvWelcome.setText("Bienvenido");}
+        else {tvWelcome.setText("Bienvenida");}
+
         tvUser = view.findViewById(R.id.TV_user);
+        tvUser.setText(u.getNombre());
+
         tvEmail = view.findViewById(R.id.TV_email);
+        tvEmail.setText(u.getEmail());
         return view;
 
     }

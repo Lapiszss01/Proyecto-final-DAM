@@ -1,8 +1,10 @@
 package com.example.proyectofinaldam.ui.Ejercicio;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +13,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.VideoView;
 
+import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.adapter.CategoriasAdapter;
 import com.example.proyectofinaldam.data.adapter.EjerciciosAdapter;
@@ -25,15 +29,17 @@ import java.util.List;
 
 public class EjercicioFragment extends Fragment {
 
-    public EjercicioFragment(Usuario u){
+    public EjercicioFragment(Usuario u, String packageName){
         this.u=u;
+        this.packageName = packageName;
     }
 
     private int tipoRuntina;
     Usuario u;
+    String packageName;
     ArrayList<Categorias> lista = new ArrayList<>();
     ArrayList<Ejercicios> lista2 = new ArrayList<>();
-
+    ArrayList<Ejercicios> nuevaLista = new ArrayList<>();
     private RecyclerView rvCategorias;
     private CategoriasAdapter categoriasAdapter;
 
@@ -41,6 +47,7 @@ public class EjercicioFragment extends Fragment {
     private EjerciciosAdapter ejerciciosAdapter;
 
     protected View.OnClickListener onClickListener;
+    private VideoView videoView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,7 +82,7 @@ public class EjercicioFragment extends Fragment {
                     }
                 }
 
-                ArrayList<Ejercicios> nuevaLista = newList(tipoRuntina);
+                nuevaLista = newList(tipoRuntina);
                 ejerciciosAdapter.lista = nuevaLista;
                 categoriasAdapter.notifyDataSetChanged();
                 ejerciciosAdapter.notifyDataSetChanged();
@@ -84,13 +91,36 @@ public class EjercicioFragment extends Fragment {
 
         rvEjercicios = view.findViewById(R.id.rvTasks);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(getActivity()));
+        nuevaLista = lista2;
         ejerciciosAdapter = new EjerciciosAdapter(lista2,requireContext());
 
         ejerciciosAdapter.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = rvCategorias.getChildAdapterPosition(v);
-                Log.d("Posicion", String.valueOf(position));
+                Ejercicios ej = nuevaLista.get(position);
+                Log.d("Posicion", ej.getNombre());
+
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                View mview = getLayoutInflater().inflate(R.layout.dialog_video,null);
+                Log.d("Posicion", packageName + " " + R.raw.a);
+
+                //TODO que el r.raw.a sea un parametro idVideo del modal
+                videoView = (VideoView) mview.findViewById(R.id.videoView);
+                videoView.setVideoPath("android.resource://com.example.proyectofinaldam/" + ej.getVideo());
+
+                videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        mp.setLooping(true);
+                        videoView.start();
+                    }
+                });
+                mBuilder.setView(mview);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
+
             }
         });
 
@@ -103,7 +133,7 @@ public class EjercicioFragment extends Fragment {
     private void rellenaListas() {
 
         //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
-        Categorias Cat1 = new Categorias(true,0,"Todos los ejercicios");
+        Categorias Cat1 = new Categorias(true,0,"Full Body");
         Categorias Cat2 = new Categorias(false,1,"Piernas");
         Categorias Cat3 = new Categorias(false,2,"Pecho");
         Categorias Cat4 = new Categorias(false,3,"Am");
@@ -113,20 +143,20 @@ public class EjercicioFragment extends Fragment {
         lista.add(Cat4);
 
         //00
-        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.raw.large,10);
-        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.raw.large,10);
-        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.raw.large,10);
-        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.raw.large,10);
-        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.raw.large,10);
-        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.raw.large,10);
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.raw.large,10,R.raw.a);
 
         //01
-        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.raw.large,10);
+        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.raw.large,10,R.raw.a);
 
         //02
-        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.raw.large,10);
-        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.raw.large,10);
-        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.raw.large,10);
+        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.raw.large,10,R.raw.a);
+        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.raw.large,10,R.raw.a);
+        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.raw.large,10,R.raw.a);
 
 
         lista2.add(Ej1);
