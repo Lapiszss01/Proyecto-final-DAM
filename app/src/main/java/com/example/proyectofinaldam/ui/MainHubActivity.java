@@ -27,10 +27,6 @@ public class MainHubActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityMainHubBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        replaceFragment(new EjercicioFragment());
 
         //Obtiene los datos de usuario
         Bundle b = getIntent().getExtras();
@@ -39,21 +35,26 @@ public class MainHubActivity extends AppCompatActivity {
         u = dao.getUsuarioById(id);
         Log.d("Funciona?",""+u.toString());
 
+        super.onCreate(savedInstanceState);
+        binding = ActivityMainHubBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new EjercicioFragment(u));
+
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
 
                 case R.id.menuEj:
-                    replaceFragment(new EjercicioFragment());
+                    replaceFragment(new EjercicioFragment(u));
                     break;
                 case R.id.menuAlim:
-                    replaceFragment(new AlimentoFragment());
+                    replaceFragment(new AlimentoFragment(u));
                     break;
                 case R.id.menuPerf:
-                    replaceFragment(new PerfilFragment());
+                    replaceFragment(new PerfilFragment(u));
                     break;
                 case R.id.menuPref:
-                    replaceFragment(new ConfiguracionFragment());
+                    //replaceFragment(new ConfiguracionFragment(u));
                     break;
 
             }

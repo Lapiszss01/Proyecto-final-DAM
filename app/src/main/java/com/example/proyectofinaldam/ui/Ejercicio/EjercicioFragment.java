@@ -17,6 +17,7 @@ import com.example.proyectofinaldam.data.adapter.CategoriasAdapter;
 import com.example.proyectofinaldam.data.adapter.EjerciciosAdapter;
 import com.example.proyectofinaldam.data.model.Categorias;
 import com.example.proyectofinaldam.data.model.Ejercicios;
+import com.example.proyectofinaldam.data.model.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,12 @@ import java.util.List;
 
 public class EjercicioFragment extends Fragment {
 
+    public EjercicioFragment(Usuario u){
+        this.u=u;
+    }
+
     private int tipoRuntina;
+    Usuario u;
     ArrayList<Categorias> lista = new ArrayList<>();
     ArrayList<Ejercicios> lista2 = new ArrayList<>();
 

@@ -9,9 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.proyectofinaldam.R;
+import com.example.proyectofinaldam.data.model.Usuario;
 
 public class AlimentoFragment extends Fragment {
 
+    Usuario u;
+
+    public AlimentoFragment(Usuario u){
+        this.u = u;
+    }
     //Nada por ahora
 
     @Override
