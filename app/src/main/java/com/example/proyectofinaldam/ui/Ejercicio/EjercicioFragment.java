@@ -133,30 +133,33 @@ public class EjercicioFragment extends Fragment {
     private void rellenaListas() {
 
         //Crea las listas que van a ser básicamente una los ejercicios y otra la parte del cuerpo que ejercitan
-        Categorias Cat1 = new Categorias(true,0,"Full Body");
-        Categorias Cat2 = new Categorias(false,1,"Piernas");
-        Categorias Cat3 = new Categorias(false,2,"Pecho");
+        Categorias catFullBody = new Categorias(true,0,"Full Body");
+        lista.add(catFullBody);
+
+        Categorias catPiernas = new Categorias(false,1,"Piernas");
+        lista.add(catPiernas);
+
+        Categorias catPecho = new Categorias(false,2,"Pecho");
+        lista.add(catPecho);
+
         Categorias Cat4 = new Categorias(false,3,"Am");
-        lista.add(Cat1);
-        lista.add(Cat2);
-        lista.add(Cat3);
         lista.add(Cat4);
 
         //00
-        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",Cat1,R.raw.large,10,R.raw.a);
-        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",Cat1,R.raw.large,10,R.raw.a);
-        Ejercicios Ej3 = new Ejercicios("Press militar",Cat1,R.raw.large,10,R.raw.a);
-        Ejercicios Ej4 = new Ejercicios("Remo",Cat1,R.raw.large,10,R.raw.a);
-        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",Cat1,R.raw.large,10,R.raw.a);
-        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",Cat1,R.raw.large,10,R.raw.a);
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",catFullBody,R.raw.large,10,R.raw.a);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",catFullBody,R.raw.large,10,R.raw.a);
+        Ejercicios Ej3 = new Ejercicios("Press militar",catFullBody,R.raw.large,10,R.raw.a);
+        Ejercicios Ej4 = new Ejercicios("Remo",catFullBody,R.raw.large,10,R.raw.a);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",catFullBody,R.raw.large,10,R.raw.a);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",catFullBody,R.raw.large,10,R.raw.a);
 
         //01
-        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",Cat2,R.raw.large,10,R.raw.a);
+        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",catPiernas,R.raw.large,10,R.raw.a);
 
         //02
-        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",Cat3,R.raw.large,10,R.raw.a);
-        Ejercicios Ej9 = new Ejercicios("Press militar",Cat3,R.raw.large,10,R.raw.a);
-        Ejercicios Ej10 = new Ejercicios("Remo",Cat3,R.raw.large,10,R.raw.a);
+        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",catPecho,R.raw.large,10,R.raw.a);
+        Ejercicios Ej9 = new Ejercicios("Press militar",catPecho,R.raw.large,10,R.raw.a);
+        Ejercicios Ej10 = new Ejercicios("Remo",catPecho,R.raw.large,10,R.raw.a);
 
 
         lista2.add(Ej1);

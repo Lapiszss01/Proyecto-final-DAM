@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTextInputLayout_overlay">
+
+        <item name="boxStrokeColor">@color/aa</item>
+        <item name="android:textColorHint">@color/aa</item>
+        <item name="hintTextColor">@color/aa</item>
+    </style>
+
+
+
+</resources>

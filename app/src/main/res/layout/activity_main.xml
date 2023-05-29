@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/blackBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,17 +18,20 @@
             android:id="@+id/ivLogo"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:srcCompat="@drawable/ic_logo_prueba" />
+            app:srcCompat="@drawable/ic_logo_prueba"
+            app:tint="@color/Letters" />
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="MyTextInputLayout_overlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Usuario">
+            android:hint="Usuario"
+            android:textColorHint="@color/Letters">
 
             <com.google.android.material.textfield.TextInputEditText
+
                 android:id="@+id/etUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,9 +43,9 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:hint="Contraseña"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/Letters">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -58,11 +62,12 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Mantén la sesión iniciada"
-            android:textColor="?attr/colorControlNormal"/>
+            android:textColor="@color/Letters"/>
 
         <Button
             android:id="@+id/btnRegister"
             style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/blueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -73,6 +78,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/blueButton"
+            android:textColor="@color/blackBackground"
             android:text="Iniciar sesión" />
 
         <Button
@@ -80,7 +87,8 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¿Te has olvidado de la contraseña?" />
+            android:text="¿Te has olvidado de la contraseña?"
+            android:textColor="@color/blueButton"/>
 
 
     </LinearLayout>
