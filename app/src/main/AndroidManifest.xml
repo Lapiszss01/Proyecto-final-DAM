@@ -24,6 +24,7 @@
         <activity android:name=".ui.Login.RegisterActivity"></activity>
         <activity android:name=".ui.Login.RegisterAvanzadoActivity"></activity>
         <activity android:name=".ui.MainHubActivity"></activity>
+        <activity android:name=".ui.Login.LoginActivity"></activity>
 
 
     </application>

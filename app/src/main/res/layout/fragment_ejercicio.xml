@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +21,7 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginVertical="12dp"
             android:text="Bienvenido"
+            android:textColor="@color/Letters"
             android:textAllCaps="true"
             android:textSize="48dp"
             android:textStyle="bold">
@@ -33,7 +35,8 @@
             android:layout_marginHorizontal="32dp"
             android:text="Rutinas"
             android:textAllCaps="true"
-            android:textSize="24dp">
+            android:textSize="24dp"
+            android:textColor="@color/Letters">
 
         </TextView>
 
@@ -52,7 +55,8 @@
             android:layout_marginTop="16dp"
             android:text="Ejercicios"
             android:textAllCaps="true"
-            android:textSize="24dp">
+            android:textSize="24dp"
+            android:textColor="@color/Letters">
         </TextView>
 
         <androidx.recyclerview.widget.RecyclerView

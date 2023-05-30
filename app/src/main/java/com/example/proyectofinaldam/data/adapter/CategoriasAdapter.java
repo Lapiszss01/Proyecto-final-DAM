@@ -53,9 +53,9 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Vi
         holder.tvName.setText(lista.get(position).getNombre());
 
         if(lista.get(position).getSelected()){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#8ECE9D"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#FF1498BF"));
         } else{
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#5A3D3D"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#345280"));
         }
 
     }

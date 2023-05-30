@@ -1,67 +1,73 @@
 package com.example.proyectofinaldam;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyectofinaldam.data.model.Usuario;
 
 import com.example.proyectofinaldam.data.sql.DatosUsuario;
+import com.example.proyectofinaldam.ui.Login.LoginActivity;
 import com.example.proyectofinaldam.ui.MainHubActivity;
 import com.example.proyectofinaldam.ui.Login.RegisterActivity;
+import com.example.proyectofinaldam.ui.ViewPager2.VPAdapter;
+import com.example.proyectofinaldam.ui.ViewPager2.firstFragment;
+import com.example.proyectofinaldam.ui.ViewPager2.secondFragment;
+import com.example.proyectofinaldam.ui.ViewPager2.thirdFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnRegisto, btnLogin;
-    EditText user, pass;
-    DatosUsuario dao;
+    Button btnStart;
+    TextView txtLogin;
+
+    ViewPager2 vp2;
+    VPAdapter vpAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnStart = (Button) findViewById(R.id.btn_Start);
+        txtLogin = (TextView) findViewById(R.id.txt_Login) ;
+        btnStart.setOnClickListener(this);
+        txtLogin.setOnClickListener(this);
 
-        user = (EditText) findViewById(R.id.etUser);
-        pass = (EditText) findViewById(R.id.etPassword);
+        vp2 = (ViewPager2) findViewById(R.id.vp2);
+        vpAdapter = new VPAdapter(getSupportFragmentManager(), getLifecycle());
 
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
-        btnRegisto = (Button) findViewById(R.id.btnRegister);
-        btnRegisto.setOnClickListener(this);
+        // add Fragments in your ViewPagerFragmentAdapter class
+        vpAdapter.addFragment(new firstFragment());
+        vpAdapter.addFragment(new secondFragment());
+        vpAdapter.addFragment(new thirdFragment());
 
-        dao = new DatosUsuario(this);
+        // set Orientation in your ViewPager2
+        vp2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+
+        vp2.setAdapter(vpAdapter);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnRegister:
+            case R.id.btn_Start:
                 // Al pulsar botón registro
                 Intent i = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(i);
                 break;
-            case R.id.btnLogin:
+            case R.id.txt_Login:
                 // Al pulsar boton login
-                String u = user.getText().toString();
-                String p = pass.getText().toString();
-                if(u.equals("")&&p.equals("")){
-                    Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
-                }else if(dao.login(u,p)==1){
-                    Usuario user = dao.getUsuario(u,p);
-                    Toast.makeText(this,"Login funcional",Toast.LENGTH_LONG).show();
-                    Intent i2 = new Intent(MainActivity.this, MainHubActivity.class);
-                    i2.putExtra("Id", user.getId());
-                    startActivity(i2);
-                } else{
-                    Toast.makeText(this,"Datos erroneos",Toast.LENGTH_LONG).show();
-                }
+                Intent i2 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i2);
                 break;
         }
     }

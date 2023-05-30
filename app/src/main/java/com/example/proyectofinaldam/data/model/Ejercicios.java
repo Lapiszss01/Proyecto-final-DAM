@@ -2,12 +2,13 @@ package com.example.proyectofinaldam.data.model;
 
 public class Ejercicios {
     String nombre;
-    Categorias categoria;
+    Categorias categoria, segCategoria;
     int foto, repeticiones, video;
     Boolean isSelected = false;
 
-    public Ejercicios(String nombre, Categorias categoria, int foto,int repeticiones, int video) {
+    public Ejercicios(String nombre, Categorias categoria, int foto,int repeticiones, int video, Categorias segCategoria) {
         this.categoria = categoria;
+        this.segCategoria = segCategoria;
         this.nombre = nombre;
         this.foto = foto;
         this.repeticiones = repeticiones;
@@ -60,5 +61,13 @@ public class Ejercicios {
 
     public void setVideo(int video) {
         this.video = video;
+    }
+
+    public Categorias getSegCategoria() {
+        return segCategoria;
+    }
+
+    public void setSegCategoria(Categorias segCategoria) {
+        this.segCategoria = segCategoria;
     }
 }

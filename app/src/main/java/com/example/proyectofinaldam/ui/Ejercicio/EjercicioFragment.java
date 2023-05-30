@@ -145,22 +145,12 @@ public class EjercicioFragment extends Fragment {
         Categorias Cat4 = new Categorias(false,3,"Am");
         lista.add(Cat4);
 
-        //00
-        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",catFullBody,R.raw.large,10,R.raw.a);
-        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",catFullBody,R.raw.large,10,R.raw.a);
-        Ejercicios Ej3 = new Ejercicios("Press militar",catFullBody,R.raw.large,10,R.raw.a);
-        Ejercicios Ej4 = new Ejercicios("Remo",catFullBody,R.raw.large,10,R.raw.a);
-        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",catFullBody,R.raw.large,10,R.raw.a);
-        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",catFullBody,R.raw.large,10,R.raw.a);
-
-        //01
-        Ejercicios Ej7 = new Ejercicios("Prensa Pendular",catPiernas,R.raw.large,10,R.raw.a);
-
-        //02
-        Ejercicios Ej8 = new Ejercicios("Flyes/Aperturas",catPecho,R.raw.large,10,R.raw.a);
-        Ejercicios Ej9 = new Ejercicios("Press militar",catPecho,R.raw.large,10,R.raw.a);
-        Ejercicios Ej10 = new Ejercicios("Remo",catPecho,R.raw.large,10,R.raw.a);
-
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",catFullBody,R.raw.large,10,R.raw.a,catPiernas);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",catFullBody,R.raw.large,10,R.raw.a,catPecho);
+        Ejercicios Ej3 = new Ejercicios("Press militar",catFullBody,R.raw.large,10,R.raw.a,catPecho);
+        Ejercicios Ej4 = new Ejercicios("Remo",catFullBody,R.raw.large,10,R.raw.a,catPecho);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",catFullBody,R.raw.large,10,R.raw.a,null);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",catFullBody,R.raw.large,10,R.raw.a,null);
 
         lista2.add(Ej1);
         lista2.add(Ej2);
@@ -168,10 +158,6 @@ public class EjercicioFragment extends Fragment {
         lista2.add(Ej4);
         lista2.add(Ej5);
         lista2.add(Ej6);
-        lista2.add(Ej7);
-        lista2.add(Ej8);
-        lista2.add(Ej9);
-        lista2.add(Ej10);
 
         /*RUTINA FULL BODY
                 -Prensa Pendular(ejercicio de pierna).
@@ -191,12 +177,16 @@ public class EjercicioFragment extends Fragment {
             for(Ejercicios ejs : lista2){
                 if(ejs.getCategoria().getType() == type){
                     nuevosEjs.add(ejs);
+                }else if(ejs.getSegCategoria() != null){
+                    if(ejs.getSegCategoria().getType() == type){nuevosEjs.add(ejs);}
                 }
             }
         } else if(type == 1){
             for(Ejercicios ejs : lista2){
                 if(ejs.getCategoria().getType() == type){
                     nuevosEjs.add(ejs);
+                }else if(ejs.getSegCategoria() != null){
+                    if(ejs.getSegCategoria().getType() == type){nuevosEjs.add(ejs);}
                 }
             }
         }
@@ -204,6 +194,8 @@ public class EjercicioFragment extends Fragment {
             for(Ejercicios ejs : lista2){
                 if(ejs.getCategoria().getType() == type){
                     nuevosEjs.add(ejs);
+                }else if(ejs.getSegCategoria() != null){
+                    if(ejs.getSegCategoria().getType() == type){nuevosEjs.add(ejs);}
                 }
             }
         }
