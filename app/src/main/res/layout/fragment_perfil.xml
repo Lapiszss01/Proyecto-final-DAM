@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/IV_profile"
@@ -32,6 +33,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/Letters"
             tools:text="Bienvenido" />
 
         <TextView
@@ -41,13 +43,15 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Firstname Lastname" />
+            tools:text="Firstname Lastname"
+            android:textColor="@color/Letters"/>
 
         <TextView
             android:id="@+id/TV_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="example@gmail.es" />
+            tools:text="example@gmail.es"
+            android:textColor="@color/Letters"/>
 
     </LinearLayout>
 
@@ -58,7 +62,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@id/IV_profile" />
+        app:layout_constraintTop_toBottomOf="@id/IV_profile"
+        android:backgroundTint="@color/Letters"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +79,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Cerrar sesión" />
+            android:text="Cerrar sesión"
+            android:backgroundTint="@color/Letters"
+            android:textColor="@color/black"/>
+
 
     </LinearLayout>
 
