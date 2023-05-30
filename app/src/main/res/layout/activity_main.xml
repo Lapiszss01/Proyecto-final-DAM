@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blueButton"
         android:text="Empezar"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:layout_marginVertical="8dp"></Button>
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="@color/Letters"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginVertical="8dp"></TextView>
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Inicia Sesión"
         android:textColor="@color/Letters"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginVertical="8dp"></TextView>
 
