@@ -1,4 +1,4 @@
-package com.example.proyectofinaldam.ui.ViewPager2;
+package com.example.proyectofinaldam.ui.Login.ViewPager2;
 
 import android.os.Bundle;
 

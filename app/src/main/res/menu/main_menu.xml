@@ -7,10 +7,11 @@
     <item android:title="Alimentacion"
         android:icon="@drawable/ic_food"
         android:id="@+id/menuAlim"/>
+    <item android:title="Canciones"
+        android:icon="@drawable/ic_music"
+        android:id="@+id/menuMusic"/>
     <item android:title="Perfil"
         android:icon="@drawable/ic_profile"
         android:id="@+id/menuPerf"/>
-    <item android:title="Configuracion"
-        android:icon="@drawable/ic_preferencias"
-        android:id="@+id/menuPref"/>
+
 </menu>

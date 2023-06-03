@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="400dp"
     android:background="@color/black"
-    tools:context=".ui.ViewPager2.secondFragment"
+    tools:context=".ui.Login.ViewPager2.secondFragment"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_gravity="center_vertical">

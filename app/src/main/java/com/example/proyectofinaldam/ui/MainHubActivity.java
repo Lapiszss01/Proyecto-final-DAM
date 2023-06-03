@@ -14,12 +14,14 @@ import com.example.proyectofinaldam.data.model.Usuario;
 import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.example.proyectofinaldam.databinding.ActivityMainHubBinding;
 import com.example.proyectofinaldam.ui.Alimento.AlimentoFragment;
+import com.example.proyectofinaldam.ui.Canciones.CancionesFragment;
 import com.example.proyectofinaldam.ui.Ejercicio.EjercicioFragment;
 import com.example.proyectofinaldam.ui.Login.PerfilFragment;
 
 public class MainHubActivity extends AppCompatActivity {
 
-    @NonNull ActivityMainHubBinding binding;
+    @NonNull
+    ActivityMainHubBinding binding;
 
     int id = 0;
     Usuario u;
@@ -53,8 +55,8 @@ public class MainHubActivity extends AppCompatActivity {
                 case R.id.menuPerf:
                     replaceFragment(new PerfilFragment(u));
                     break;
-                case R.id.menuPref:
-                    //replaceFragment(new ConfiguracionFragment(u));
+                case R.id.menuMusic:
+                    replaceFragment(new CancionesFragment());
                     break;
 
             }

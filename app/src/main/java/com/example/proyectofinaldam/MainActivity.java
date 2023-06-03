@@ -6,22 +6,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.proyectofinaldam.data.model.Usuario;
-
-import com.example.proyectofinaldam.data.sql.DatosUsuario;
 import com.example.proyectofinaldam.ui.Login.LoginActivity;
-import com.example.proyectofinaldam.ui.MainHubActivity;
 import com.example.proyectofinaldam.ui.Login.RegisterActivity;
-import com.example.proyectofinaldam.ui.ViewPager2.VPAdapter;
-import com.example.proyectofinaldam.ui.ViewPager2.firstFragment;
-import com.example.proyectofinaldam.ui.ViewPager2.secondFragment;
-import com.example.proyectofinaldam.ui.ViewPager2.thirdFragment;
+import com.example.proyectofinaldam.ui.Login.ViewPager2.VPAdapter;
+import com.example.proyectofinaldam.ui.Login.ViewPager2.firstFragment;
+import com.example.proyectofinaldam.ui.Login.ViewPager2.secondFragment;
+import com.example.proyectofinaldam.ui.Login.ViewPager2.thirdFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 

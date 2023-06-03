@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.Canciones.MediaPlayerActivity"
+    android:background="#F8E6E0"
+>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tituloCancion"
+            android:layout_width="374dp"
+            android:layout_height="106dp"
+            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="marquee"
+            android:padding="10dp"
+            android:text="Titulo de la canción"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/pauseBtn"
+            android:layout_width="123dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/prevBtn"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <ImageView
+            android:id="@+id/nextBtn"
+            android:layout_width="123dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/pauseBtn"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar"
+            app:srcCompat="@drawable/next" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="323dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clave" />
+
+        <ImageView
+            android:id="@+id/prevBtn"
+            android:layout_width="113dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar"
+            app:srcCompat="@drawable/previous" />
+
+        <ImageView
+            android:id="@+id/clave"
+            android:layout_width="315dp"
+            android:layout_height="298dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="16dp"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloCancion"
+            app:srcCompat="@drawable/clave" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
