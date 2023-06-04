@@ -1,10 +1,14 @@
 package com.example.proyectofinaldam.ui.Ejercicio;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.proyectofinaldam.MainActivity;
@@ -87,6 +92,8 @@ public class EjercicioFragment extends Fragment {
                 categoriasAdapter.notifyDataSetChanged();
                 ejerciciosAdapter.notifyDataSetChanged();
             }
+
+
         });
 
         rvEjercicios = view.findViewById(R.id.rvTasks);
@@ -126,6 +133,11 @@ public class EjercicioFragment extends Fragment {
 
         rvEjercicios.setAdapter(ejerciciosAdapter);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false));
+
+        if (checkPermission() == false) {
+            requestPermission();
+        }
+
         return view;
 
     }
@@ -201,6 +213,28 @@ public class EjercicioFragment extends Fragment {
         }
 
         return nuevosEjs;
+    }
+
+    boolean checkPermission(){
+        int result = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
+        if(result == PackageManager.PERMISSION_GRANTED){
+            return true;
+        }else{
+
+            return false;
+        }
+    }
+
+    void requestPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE)){
+            Toast.makeText(getContext(),"Permisos de lectura requeridos, activelos en la configuracion",Toast.LENGTH_LONG).show();
+        }else{
+            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},123);
+            //Toast.makeText(getContext(),"Reinicie la aplicación después de permitir uso para poder utilizarla",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getContext(),"AAAA",Toast.LENGTH_LONG).show();
+
+
+        }
     }
 
 

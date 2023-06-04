@@ -54,9 +54,7 @@ public class CancionesFragment extends Fragment {
         pideReinicio.setVisibility(View.GONE);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
-        if (checkPermission() == false) {
-            requestPermission();
-        }
+
 
         String[] projection = {
                 MediaStore.Audio.Media.TITLE,
@@ -110,23 +108,6 @@ public class CancionesFragment extends Fragment {
 
 
 
-    boolean checkPermission(){
-        int result = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
-        if(result == PackageManager.PERMISSION_GRANTED){
-            return true;
-        }else{
 
-            return false;
-        }
-    }
-
-    void requestPermission(){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE)){
-            Toast.makeText(getContext(),"Permisos de lectura requeridos, activelos en la configuracion",Toast.LENGTH_LONG).show();
-        }else{
-            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},123);
-            Toast.makeText(getContext(),"Reinicie la aplicación después de permitir uso para poder utilizarla",Toast.LENGTH_LONG).show();
-        }
-    }
 
 }
