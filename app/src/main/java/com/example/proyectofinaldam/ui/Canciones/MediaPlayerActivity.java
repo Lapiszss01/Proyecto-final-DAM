@@ -62,10 +62,10 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
                     if(mediaPlayer.isPlaying()){
 
-                        //pauseBtn.setImageResource(R.drawable.pause);
+                        pauseBtn.setImageResource(R.drawable.pause);
                         clave.setRotation(x++);
                     } else{
-                        //pauseBtn.setImageResource(R.drawable.play);
+                        pauseBtn.setImageResource(R.drawable.play);
                     }
                 }
                 new Handler().postDelayed(this,100);
@@ -93,18 +93,18 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
         //Notificacion música
 
-        //creamosNotificacion();
+        creamosNotificacion();
 
     }
 
-    /*private void creamosNotificacion(){
+    private void creamosNotificacion(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             crearCanal();
 
             String titulo = currentSong.getTitulo();
             String artista = currentSong.getArtista();
 
-            //CrearNotificacion.crearNotificacion(MediaPlayerActivity.this, titulo,artista,posicionCancion);
+            CrearNotificacion.crearNotificacion(MediaPlayerActivity.this, titulo,artista,posicionCancion);
         }
     }
 
@@ -121,7 +121,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
             }
         }
 
-    }*/
+    }
 
     void setInformacion(){
 
@@ -173,7 +173,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
         mediaPlayer.reset();
 
         setInformacion();
-        //creamosNotificacion();
+        creamosNotificacion();
 
     }
 
@@ -187,7 +187,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
         mediaPlayer.reset();
 
         setInformacion();
-        //creamosNotificacion();
+        creamosNotificacion();
 
     }
 
