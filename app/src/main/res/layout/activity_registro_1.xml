@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:Android="http://schemas.android.com/tools"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="32dp">
+    android:paddingVertical="32dp"
+    android:background="@color/black">
 
 
 
@@ -35,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/Letters"
                 android:text="Masculino"
                 android:textAllCaps="true"
                 android:textSize="24dp">
@@ -75,7 +76,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/Letters"
                 android:text="Femenino"
                 android:textAllCaps="true"
                 android:textSize="24dp">
@@ -109,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text="Altura"
                 android:textAllCaps="true"
+                android:textStyle="bold"
                 android:textSize="20dp">
 
             </TextView>
@@ -119,6 +121,8 @@
                 android:layout_height="wrap_content"
                 android:text="120"
                 android:textSize="38sp"
+                android:textColor="@color/blueButton"
+                android:textColorHint="@color/blueButton"
                 android:textStyle="bold">
 
             </TextView>
@@ -129,7 +133,8 @@
                 android:layout_height="wrap_content"
                 android:stepSize="1"
                 android:valueFrom="120"
-                android:valueTo="200">
+                android:valueTo="200"
+                android:backgroundTint="@color/blueButton">
 
             </com.google.android.material.slider.RangeSlider>
 
@@ -160,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peso"
-                android:textStyle=""
+                android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textSize="24dp">
 
@@ -174,6 +179,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="38sp"
                 android:textStyle="bold"
+                android:textColor="@color/blueButton"
+                android:textColorHint="@color/blueButton"
                 android:hint="70">
             </EditText>
 
@@ -202,6 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edad"
+                android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textSize="24dp">
 
@@ -215,6 +223,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="38sp"
                 android:textStyle="bold"
+                android:textColor="@color/blueButton"
+                android:textColorHint="@color/blueButton"
                 android:hint="20">
             </EditText>
 
@@ -240,9 +250,11 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Actividad fisica"
+                android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textSize="24dp"
                 android:layout_gravity="center">
@@ -266,6 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Sin actividad"
+                        android:textColor="@color/blueButton"
                         android:layout_weight="1"/>
 
                     <RadioButton
@@ -273,6 +286,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Poca actividad"
+                        android:textColor="@color/blueButton"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -294,6 +308,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Medianamente activo"
+                        android:textColor="@color/blueButton"
                         android:layout_weight="1"/>
 
                     <RadioButton
@@ -301,22 +316,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Altamente activo"
+                        android:textColor="@color/blueButton"
                         android:layout_weight="1"/>
                 </RadioGroup>
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tvActividad"
+                android:layout_marginBottom="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="24dp"
-                android:text="No haces ejercicio físico"/>
+                android:text="__________________________"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <Button
         android:id="@+id/btnRegister"
+        android:backgroundTint="@color/blueButton"
         app:layout_constraintTop_toBottomOf="@+id/cvActividadFisica"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
@@ -327,3 +346,85 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:Android="http://schemas.android.com/tools"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="32dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexo"
+                android:textSize="24sp">
+            </TextView>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp">
+            </Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Altura"
+                android:textSize="24sp">
+            </TextView>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp">
+            </Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso"
+                android:textSize="24sp">
+            </TextView>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp">
+            </Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edad"
+                android:textSize="24sp">
+            </TextView>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp">
+            </Spinner>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="Registrarse" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>-->

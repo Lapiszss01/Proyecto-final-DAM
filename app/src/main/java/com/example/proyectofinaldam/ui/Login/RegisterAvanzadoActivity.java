@@ -34,7 +34,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     public RadioButton rb0,rb1,rb2,rb3;
     public RadioGroup rg0,rg1;
 
-    public TextView tvRs;
+    public TextView tvRs, tvAf;
     public EditText peso,edad;
     public RangeSlider rs;
     public CardView cvMale, cvFemale;
@@ -57,6 +57,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
         btnRegistro = (Button) findViewById(R.id.btnRegister);
         btnRegistro.setOnClickListener(this);
         tvRs = (TextView) findViewById(R.id.tvHeight);
+        tvAf = (TextView) findViewById(R.id.tvActividad);
 
         rg0 = (RadioGroup) findViewById(R.id.rg0);
         rg1 = (RadioGroup) findViewById(R.id.rg1);
@@ -137,18 +138,22 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
             case R.id.radioButton0:
                 rg1.clearCheck();
                 actividadF = 0;
+                tvAf.setText("Nada o poco de ejercicio");
                 break;
             case R.id.radioButton1:
                 rg1.clearCheck();
                 actividadF = 1;
+                tvAf.setText("Ejercicio 2-3 días por semana");
                 break;
             case R.id.radioButton2:
                 rg0.clearCheck();
                 actividadF = 2;
+                tvAf.setText("Ejercicio 4-5 días por semana");
                 break;
             case R.id.radioButton3:
                 rg0.clearCheck();
                 actividadF = 3;
+                tvAf.setText("Ejercicio 6-7 días por semana");
                 break;
         }
     }
@@ -180,9 +185,9 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
         int colorReference = 0;
 
         if(isSelectedComponent){
-            colorReference = R.color.dark_grey;
+            colorReference = R.color.blueSelected;
         } else {
-            colorReference = R.color.white;
+            colorReference = R.color.blueButton;
         }
 
         return ContextCompat.getColor(this,colorReference);

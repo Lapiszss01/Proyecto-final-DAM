@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,14 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.Login.RegisterActivity"></activity>
-        <activity android:name=".ui.Login.RegisterAvanzadoActivity"></activity>
-        <activity android:name=".ui.MainHubActivity"></activity>
-        <activity android:name=".ui.Login.LoginActivity"></activity>
-        <activity android:name=".ui.Canciones.MediaPlayerActivity"></activity>
-
-
+        <activity android:name=".ui.Login.RegisterActivity" />
+        <activity android:name=".ui.Login.RegisterAvanzadoActivity" />
+        <activity android:name=".ui.MainHubActivity" />
+        <activity android:name=".ui.Login.LoginActivity" />
+        <activity android:name=".ui.Canciones.MediaPlayerActivity" />
+        <activity android:name=".ui.Alimento.AlimentoActivity"></activity>
     </application>
 
 </manifest>
