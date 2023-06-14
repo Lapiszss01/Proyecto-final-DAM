@@ -29,7 +29,9 @@
         <activity android:name=".ui.MainHubActivity" />
         <activity android:name=".ui.Login.LoginActivity" />
         <activity android:name=".ui.Canciones.MediaPlayerActivity" />
-        <activity android:name=".ui.Alimento.AlimentoActivity"></activity>
+        <activity android:name=".ui.Alimento.AlimentoPerderGrasaActivity"></activity>
+        <activity android:name=".ui.Alimento.AlimentoGanarMusculoActivity"></activity>
+        <activity android:name=".ui.Alimento.AlimentoMantenimientoActivity"></activity>
     </application>
 
 </manifest>

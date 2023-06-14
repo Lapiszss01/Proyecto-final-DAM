@@ -10,13 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.model.Usuario;
-import com.example.proyectofinaldam.ui.Login.RegisterActivity;
-import com.example.proyectofinaldam.ui.Login.RegisterAvanzadoActivity;
 
 public class AlimentoFragment extends Fragment implements View.OnClickListener{
 
@@ -52,19 +48,19 @@ public class AlimentoFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.cvGanarMusculo:
+            case R.id.cvPerderGrasa:
                 Log.d("OnClick","Aa");
-                Intent i = new Intent(getActivity(), AlimentoActivity.class);
+                Intent i = new Intent(getActivity(), AlimentoPerderGrasaActivity.class);
                 startActivity(i);
                 break;
             case R.id.cvMantenimiento:
                 Log.d("OnClick","Aav");
-                Intent i2 = new Intent(getActivity(), AlimentoActivity.class);
+                Intent i2 = new Intent(getActivity(), AlimentoMantenimientoActivity.class);
                 startActivity(i2);
                 break;
-            case R.id.cvPerderGrasa:
+            case R.id.cvGanarMusculo:
                 Log.d("OnClick","Aads");
-                Intent i3 = new Intent(getActivity(), AlimentoActivity.class);
+                Intent i3 = new Intent(getActivity(), AlimentoGanarMusculoActivity.class);
                 startActivity(i3);
                 break;
         }

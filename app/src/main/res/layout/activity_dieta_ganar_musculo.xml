@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Alimento.AlimentoPerderGrasaActivity"
+    android:background="@color/black">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:text="Desayuno"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/blueButton"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Letters"
+            android:text="Opción 1: Dos rebanadas de pan integral con mantequilla de maní y rodajas de plátano.
+                        \n\nOpción 2: Batido de proteínas con leche entera, plátano, avena y una cucharada de mantequilla de almendras." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:text="Media mañana"
+            android:textStyle="bold"
+            android:textColor="@color/blueButton"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Letters"
+            android:text="Una porción de frutos secos (almendras, nueces, etc.) y un yogur griego entero con miel y granola." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blueButton"
+            android:layout_marginVertical="8dp"
+            android:text="Almuerzo"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Letters"
+            android:text="Opción 1: Pollo asado con arroz integral, vegetales al vapor y aguacate.
+                        \n\nOpción 2: Pasta integral con salsa de tomate, pollo a la parrilla y espinacas." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Merienda"
+            android:layout_marginVertical="8dp"
+            android:textColor="@color/blueButton"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Letters"
+            android:text="Una porción de hummus con palitos de zanahoria y un batido de proteínas con leche entera, frutas y una cucharada de mantequilla de maní." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cena"
+            android:textColor="@color/blueButton"
+            android:layout_marginVertical="8dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Letters"
+            android:text="Opción 1: Filete de ternera a la parrilla con patatas al horno y brócoli salteado en aceite de oliva.
+                        \n\nOpción 2: Salmón al horno con quinoa, aguacate y ensalada de espinacas." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:text="Antes de dormir"
+            android:textColor="@color/blueButton"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/Letters"
+            android:layout_height="wrap_content"
+            android:text="Opción 1: Una taza de leche entera con 1 cucharada de miel y nueces.
+                        \n\nOpción 2: Una porción de yogur griego entero con frutas y granola." />
+
+
+
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
