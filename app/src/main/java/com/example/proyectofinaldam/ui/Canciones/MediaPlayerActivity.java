@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -127,6 +128,8 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
         currentSong = listaCanciones.get(MyMediaPlayer.currentIndex);
 
+        //Log.d("Cancion","AAAAAAAAAAAAAAA"+currentSong.getPath());
+
         tituloCancion.setText(currentSong.getTitulo());
 
 
@@ -143,6 +146,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
         mediaPlayer.reset();
         try {
+            Log.d("Cancion","AAAAAAAAAAAAAAA"+currentSong.getPath());
             mediaPlayer.setDataSource(currentSong.getPath());
             mediaPlayer.prepare();
             mediaPlayer.start();
