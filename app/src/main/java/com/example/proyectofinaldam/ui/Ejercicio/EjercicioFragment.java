@@ -1,7 +1,6 @@
 package com.example.proyectofinaldam.ui.Ejercicio;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.example.proyectofinaldam.MainActivity;
 import com.example.proyectofinaldam.R;
 import com.example.proyectofinaldam.data.adapter.CategoriasAdapter;
 import com.example.proyectofinaldam.data.adapter.EjerciciosAdapter;
@@ -29,7 +27,6 @@ import com.example.proyectofinaldam.data.model.Ejercicios;
 import com.example.proyectofinaldam.data.model.Usuario;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class EjercicioFragment extends Fragment {
@@ -110,7 +107,6 @@ public class EjercicioFragment extends Fragment {
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                 View mview = getLayoutInflater().inflate(R.layout.dialog_video,null);
-                Log.d("Posicion", packageName + " " + R.raw.a);
 
                 //TODO que el r.raw.a sea un parametro idVideo del modal
                 videoView = (VideoView) mview.findViewById(R.id.videoView);
@@ -148,21 +144,21 @@ public class EjercicioFragment extends Fragment {
         Categorias catFullBody = new Categorias(true,0,"Full Body");
         lista.add(catFullBody);
 
-        Categorias catPiernas = new Categorias(false,1,"Piernas");
-        lista.add(catPiernas);
+        Categorias catPechoEspalda = new Categorias(false,1,"Pecho y espalda");
+        lista.add(catPechoEspalda);
 
-        Categorias catPecho = new Categorias(false,2,"Pecho");
-        lista.add(catPecho);
+        Categorias catPierna = new Categorias(false,2,"Pierna");
+        lista.add(catPierna);
 
-        Categorias Cat4 = new Categorias(false,3,"Am");
-        lista.add(Cat4);
+        Categorias catHombro = new Categorias(false,3,"Hombro");
+        lista.add(catHombro);
 
-        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",catFullBody,R.raw.large,10,R.raw.a,catPiernas);
-        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",catFullBody,R.raw.large,10,R.raw.a,catPecho);
-        Ejercicios Ej3 = new Ejercicios("Press militar",catFullBody,R.raw.large,10,R.raw.a,catPecho);
-        Ejercicios Ej4 = new Ejercicios("Remo",catFullBody,R.raw.large,10,R.raw.a,catPecho);
-        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",catFullBody,R.raw.large,10,R.raw.a,null);
-        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",catFullBody,R.raw.large,10,R.raw.a,null);
+        Ejercicios Ej1 = new Ejercicios("Prensa Pendular",catFullBody,R.raw.prensapendular,10,R.raw.prensavid,catPierna);
+        Ejercicios Ej2 = new Ejercicios("Flyes/Aperturas",catFullBody,R.raw.flyes,10,R.raw.flyesvid,catPechoEspalda);
+        Ejercicios Ej3 = new Ejercicios("Press militar",catFullBody,R.raw.pressmilitar,10,R.raw.pressvid,catHombro);
+        Ejercicios Ej4 = new Ejercicios("Remo",catFullBody,R.raw.remo,10,R.raw.removid,catPechoEspalda);
+        Ejercicios Ej5 = new Ejercicios("Curl de biceps con máquina",catFullBody,R.raw.curl,10,R.raw.curlvid,catHombro);
+        Ejercicios Ej6 = new Ejercicios("Extensión de triceps con cuerda",catFullBody,R.raw.extensiontriceps,10,R.raw.extensionesvid,catHombro);
 
         lista2.add(Ej1);
         lista2.add(Ej2);
@@ -170,14 +166,6 @@ public class EjercicioFragment extends Fragment {
         lista2.add(Ej4);
         lista2.add(Ej5);
         lista2.add(Ej6);
-
-        /*RUTINA FULL BODY
-                -Prensa Pendular(ejercicio de pierna).
-                -Flyes/Aperturas(ejercicio de pecho).
-                -Press militar(ejercicio de hombro).
-                -Remo(ejercicio de espalda).
-                -Curl de biceps con máquina.
-        -Extensión de triceps con cuerda.*/
 
     }
 
@@ -203,6 +191,15 @@ public class EjercicioFragment extends Fragment {
             }
         }
         else if(type == 2){
+            for(Ejercicios ejs : lista2){
+                if(ejs.getCategoria().getType() == type){
+                    nuevosEjs.add(ejs);
+                }else if(ejs.getSegCategoria() != null){
+                    if(ejs.getSegCategoria().getType() == type){nuevosEjs.add(ejs);}
+                }
+            }
+        }
+        else if(type == 3){
             for(Ejercicios ejs : lista2){
                 if(ejs.getCategoria().getType() == type){
                     nuevosEjs.add(ejs);

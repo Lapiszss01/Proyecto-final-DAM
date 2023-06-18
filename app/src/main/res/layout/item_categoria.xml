@@ -21,7 +21,7 @@
             android:id="@+id/tvRutinaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/Letters"
             android:textSize="24dp"
             android:textStyle="bold"
             tools:text="PRUEBA">
@@ -32,7 +32,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            tools:background="@color/black">
+            android:background="@color/Letters">
 
         </View>
 

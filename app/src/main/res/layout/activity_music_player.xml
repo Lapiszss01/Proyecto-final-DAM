@@ -26,8 +26,8 @@ android:gravity="center"
         android:id="@+id/clave"
         android:layout_width="315dp"
         android:layout_height="298dp"
-        app:srcCompat="@drawable/clave"
-        app:tint="@color/Letters"/>
+        app:srcCompat="@drawable/iniciocascos"
+/>
 
     <SeekBar
         android:id="@+id/seekBar"

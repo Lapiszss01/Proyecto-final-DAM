@@ -19,101 +19,125 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
             android:text="Desayuno"
             android:textStyle="bold"
             android:textSize="24sp"
             android:textColor="@color/blueButton"
             />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/Letters"
-            android:text="Opción 1: Una taza de avena cocida con canela, una taza de fresas y una cucharada de nueces.
-                        \n\nOpción 2: Dos huevos revueltos con espinacas y tomates, una rebanada de pan integral tostado." />
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
+            android:textColor="@color/Letters"
+            android:text="  Opción 1: Una taza de avena cocida con canela, una taza de fresas y una cucharada de nueces.
+                        \n\n    Opción 2: Dos huevos revueltos con espinacas y tomates, una rebanada de pan integral tostado." />
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Media mañana"
             android:textStyle="bold"
             android:textColor="@color/blueButton"
             android:textSize="24sp"
             />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/Letters"
-            android:text="Un yogur griego bajo en grasa y una manzana." />
+            android:text="  Un yogur griego bajo en grasa y una manzana." />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/blueButton"
-            android:layout_marginVertical="8dp"
             android:text="Almuerzo"
             android:textStyle="bold"
             android:textSize="24sp"
             />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/Letters"
-            android:text="Opción 1: Ensalada de pollo a la parrilla con lechuga, espinacas, tomates, pepinos, zanahorias ralladas y vinagreta ligera.
-                        \n\nOpción 2: Filete de salmón a la parrilla con espárragos y quinoa." />
+            android:text="  Opción 1: Ensalada de pollo a la parrilla con lechuga, espinacas, tomates, pepinos, zanahorias ralladas y vinagreta ligera.
+                        \n\n    Opción 2: Filete de salmón a la parrilla con espárragos y quinoa." />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Merienda"
-            android:layout_marginVertical="8dp"
             android:textColor="@color/blueButton"
             android:textStyle="bold"
             android:textSize="24sp"
             />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/Letters"
-            android:text="Un puñado de almendras y una rodaja de piña." />
+            android:text="  Un puñado de almendras y una rodaja de piña." />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cena"
             android:textColor="@color/blueButton"
-            android:layout_marginVertical="8dp"
             android:textStyle="bold"
             android:textSize="24sp"
             />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/Letters"
-            android:text="Opción 1: Pechuga de pollo a la plancha con brócoli al vapor y batata asada.
-                        \n\nOpción 2: Ensalada de atún con lechuga, tomates cherry, pepinos, aceitunas y aderezo bajo en grasa." />
+            android:text="  Opción 1: Pechuga de pollo a la plancha con brócoli al vapor y batata asada.
+                        \n\n    Opción 2: Ensalada de atún con lechuga, tomates cherry, pepinos, aceitunas y aderezo bajo en grasa." />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
             android:text="Antes de dormir"
             android:textColor="@color/blueButton"
             android:textStyle="bold"
             android:textSize="24sp"
             />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/Letters"></View>
+
         <TextView
             android:layout_width="match_parent"
             android:textColor="@color/Letters"
             android:layout_height="wrap_content"
-            android:text="Una taza de té de hierbas sin azúcar." />
+            android:text="  Una taza de té de hierbas sin azúcar." />
 
 
 

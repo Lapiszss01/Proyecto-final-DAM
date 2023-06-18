@@ -29,10 +29,8 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
     public boolean mascSeleccionado = true;
     public boolean femSeleccionado = false;
     public int altura = 120;
+    public int peso2,edad2;
     public int actividadF = -1;
-
-    public RadioButton rb0,rb1,rb2,rb3;
-    public RadioGroup rg0,rg1;
 
     public TextView tvRs, tvAf;
     public EditText peso,edad;
@@ -57,19 +55,7 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
         btnRegistro = (Button) findViewById(R.id.btnRegister);
         btnRegistro.setOnClickListener(this);
         tvRs = (TextView) findViewById(R.id.tvHeight);
-        tvAf = (TextView) findViewById(R.id.tvActividad);
 
-        rg0 = (RadioGroup) findViewById(R.id.rg0);
-        rg1 = (RadioGroup) findViewById(R.id.rg1);
-
-        rb0 = (RadioButton) findViewById(R.id.radioButton0);
-        rb0.setOnClickListener(this);
-        rb1 = (RadioButton) findViewById(R.id.radioButton1);
-        rb1.setOnClickListener(this);
-        rb2 = (RadioButton) findViewById(R.id.radioButton2);
-        rb2.setOnClickListener(this);
-        rb3 = (RadioButton) findViewById(R.id.radioButton3);
-        rb3.setOnClickListener(this);
         dao = new DatosUsuario(this);
         rs.addOnChangeListener(new RangeSlider.OnChangeListener() {
             @Override
@@ -108,22 +94,33 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
 
                 u.setGenero(obtenGenero());
                 u.setAltura(altura);
-                if(!peso.getText().toString().equals("")){u.setPeso(Integer.parseInt(peso.getText().toString()));}
-                if(!edad.getText().toString().equals("")){u.setEdad(Integer.parseInt(edad.getText().toString()));}
+                if(!peso.getText().toString().equals("")){peso2 = Integer.parseInt(peso.getText().toString());}
+                if(!edad.getText().toString().equals("")){edad2 = Integer.parseInt(edad.getText().toString());}
                 u.setActividadF(actividadF);
 
                 Log.d("User","User: "+u.toString());
 
-                if(!u.isNull()||peso.equals("")||edad.equals("")||actividadF == -1){
+                if(peso.equals("")||edad.equals("")){
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
-                }else if(dao.insertUsuario(u)){
-                    Intent i = new Intent(RegisterAvanzadoActivity.this, LoginActivity.class);
+                }else{
+
+                    Intent i = new Intent(RegisterAvanzadoActivity.this, RegisterAvanzado2Activity.class);
+                    i.putExtra("Nombre", nombre);
+                    i.putExtra("Apellidos", apellido);
+                    i.putExtra("Contraseña", contraseña);
+                    i.putExtra("Usuario", email);
+                    i.putExtra("Email", usuario);
+                    i.putExtra("Genero", obtenGenero());
+                    i.putExtra("Altura", altura);
+                    i.putExtra("Peso", peso2);
+                    i.putExtra("Edad", edad2);
+
+                    startActivity(i);
+
+                    /*Intent i = new Intent(RegisterAvanzadoActivity.this, LoginActivity.class);
                     startActivity(i);
                     Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
-                    finish();
-                }else{
-                    Toast.makeText(this,"Usuario ya registrado",Toast.LENGTH_LONG).show();
-                    finish();
+                    finish();*/
                 }
                 break;
             case R.id.cvMasc:
@@ -133,27 +130,6 @@ public class RegisterAvanzadoActivity extends AppCompatActivity implements View.
             case R.id.cvFem:
                 changeGenderColor();
                 setGenderColor();
-                break;
-
-            case R.id.radioButton0:
-                rg1.clearCheck();
-                actividadF = 0;
-                tvAf.setText("Nada o poco de ejercicio");
-                break;
-            case R.id.radioButton1:
-                rg1.clearCheck();
-                actividadF = 1;
-                tvAf.setText("Ejercicio 2-3 días por semana");
-                break;
-            case R.id.radioButton2:
-                rg0.clearCheck();
-                actividadF = 2;
-                tvAf.setText("Ejercicio 4-5 días por semana");
-                break;
-            case R.id.radioButton3:
-                rg0.clearCheck();
-                actividadF = 3;
-                tvAf.setText("Ejercicio 6-7 días por semana");
                 break;
         }
     }

@@ -10,16 +10,18 @@
     android:layout_gravity="center_vertical">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/large">
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/manzana">
     </ImageView>
 
     <TextView
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/Letters"
-        android:text="AAAAAAAAAAAAAAAAAA 2">
+        android:gravity="center"
+        android:text="Aprende tus requerimientos para alcanzar tus objetivos">
 
     </TextView>
 
