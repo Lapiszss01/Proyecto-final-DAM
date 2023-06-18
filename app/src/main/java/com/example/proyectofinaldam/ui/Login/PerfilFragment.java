@@ -50,12 +50,11 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         btnCerrarSesion = view.findViewById(R.id.BTN_logout);
         btnCerrarSesion.setOnClickListener(this);
 
-        //TODO pedir genero en registro
-        if(sexo == 0){tvWelcome.setText("Bienvenido");}
+        if(u.getGenero()==0){tvWelcome.setText("Bienvenido");}
         else {tvWelcome.setText("Bienvenida");}
 
         tvUser = view.findViewById(R.id.TV_user);
-        tvUser.setText(u.getNombre());
+        tvUser.setText(u.getNombre() + " " +u.getApellidos());
 
         tvEmail = view.findViewById(R.id.TV_email);
         tvEmail.setText(u.getEmail());

@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.btnRegister:
                 //Cuando pulsas registrar pilla los datos de cada cuadro de texto
+
                 Usuario u = new Usuario();
                 u.setNombre(nom.getText().toString());
                 u.setApellidos(ap.getText().toString());

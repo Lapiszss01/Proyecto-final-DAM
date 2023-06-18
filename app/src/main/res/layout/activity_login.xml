@@ -55,15 +55,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/cbRemember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Mantén la sesión iniciada"
-            android:textColor="@color/Letters"/>
-
         <Button
             android:id="@+id/btnRegister"
             style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -81,14 +72,6 @@
             android:backgroundTint="@color/blueButton"
             android:textColor="@color/blackBackground"
             android:text="Iniciar sesión" />
-
-        <Button
-            android:id="@+id/btnResetPassword"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="¿Te has olvidado de la contraseña?"
-            android:textColor="@color/blueButton"/>
 
 
     </LinearLayout>
