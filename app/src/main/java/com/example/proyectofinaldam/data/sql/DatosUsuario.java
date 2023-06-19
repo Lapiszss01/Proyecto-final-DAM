@@ -114,4 +114,15 @@ public class DatosUsuario {
         }
         return null;
     }
+
+    public boolean updateUsuario(Usuario u){
+        ContentValues cv = new ContentValues();
+        cv.put("altura",u.getAltura());
+        cv.put("edad",u.getEdad());
+        cv.put("peso",u.getPeso());
+        cv.put("actividadF",u.getActividadF());
+        return (sql.update("usuario",cv,"id="+u.getId(),null)>0);
+    }
+
+
 }

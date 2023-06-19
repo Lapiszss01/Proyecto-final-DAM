@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Usuario"
+            android:hint="Email"
             android:textColorHint="@color/blackBackground">
 
             <com.google.android.material.textfield.TextInputEditText

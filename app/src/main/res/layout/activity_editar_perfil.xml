@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="32dp">
+
+    <com.google.android.material.card.MaterialCardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/blueButton"
+        android:id="@+id/cvHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#4E4E4E"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Altura (CM)"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:textColor="@color/Letters"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="120"
+                android:textColor="@color/Letters"
+                android:textColorHint="@color/blueButton"
+                android:textSize="38sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blueButton"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200">
+
+            </com.google.android.material.slider.RangeSlider>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/viewWeight"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/blueButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvHeight"
+        app:strokeColor="#4E4E4E"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso (KG)"
+                android:textColor="@color/Letters"
+                android:textAllCaps="true"
+                android:textSize="24dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:gravity="center"
+                android:hint="0"
+                android:textColor="@color/Letters"
+                android:textColorHint="@color/blueSelected"
+                android:textSize="38sp"
+                android:textStyle="bold"></EditText>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvAge"
+        app:cardBackgroundColor="@color/blueButton"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvHeight"
+        app:strokeColor="#4E4E4E"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edad"
+                android:textColor="@color/Letters"
+                android:textAllCaps="true"
+                android:textSize="24dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/etAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:gravity="center"
+                android:hint="0"
+                android:textColor="@color/Letters"
+                android:textColorHint="@color/blueSelected"
+                android:textSize="38sp"
+                android:textStyle="bold"></EditText>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvActividadFisica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:strokeColor="#4E4E4E"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="@color/blueButton"
+        app:cardCornerRadius="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividad fisica"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="24dp"
+                android:textColor="@color/Letters"
+                android:layout_gravity="center">
+
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rg0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:textColor="@color/Letters"
+                        android:id="@+id/radioButton0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sin actividad"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:textColor="@color/Letters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Poca actividad"
+                        android:layout_weight="1" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:textColor="@color/Letters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Medianamente activo"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:textColor="@color/Letters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Altamente activo"
+                        android:layout_weight="1"/>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvActividad"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="24dp"
+                android:text="__________________________"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:textColor="@color/Letters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blueButton"
+        android:text="Registrarse"
+        android:textSize="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvActividadFisica" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

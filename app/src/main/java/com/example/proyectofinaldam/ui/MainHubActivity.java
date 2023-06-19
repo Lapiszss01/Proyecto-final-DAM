@@ -16,7 +16,7 @@ import com.example.proyectofinaldam.databinding.ActivityMainHubBinding;
 import com.example.proyectofinaldam.ui.Alimento.AlimentoFragment;
 import com.example.proyectofinaldam.ui.Canciones.CancionesFragment;
 import com.example.proyectofinaldam.ui.Ejercicio.EjercicioFragment;
-import com.example.proyectofinaldam.ui.Login.PerfilFragment;
+import com.example.proyectofinaldam.ui.Perfil.PerfilFragment;
 
 public class MainHubActivity extends AppCompatActivity {
 

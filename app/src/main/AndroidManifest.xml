@@ -33,6 +33,7 @@
         <activity android:name=".ui.Alimento.AlimentoGanarMusculoActivity" />
         <activity android:name=".ui.Alimento.AlimentoMantenimientoActivity" />
         <activity android:name=".ui.Login.RegisterAvanzado2Activity"></activity>
+        <activity android:name=".ui.Perfil.EditarPerfilActivity"></activity>
     </application>
 
 </manifest>

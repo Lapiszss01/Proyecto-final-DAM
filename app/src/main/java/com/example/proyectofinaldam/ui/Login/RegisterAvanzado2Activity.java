@@ -80,6 +80,8 @@ public class RegisterAvanzado2Activity extends AppCompatActivity implements View
                 u.setEdad(edad);
                 u.setActividadF(0);
 
+                Log.d("User",u.toString())                ;
+
                 if(dao.insertUsuario(u)){
                     Intent i = new Intent(RegisterAvanzado2Activity.this, LoginActivity.class);
                     startActivity(i);
