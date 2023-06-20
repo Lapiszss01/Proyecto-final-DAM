@@ -85,7 +85,6 @@ public class RegisterAvanzado2Activity extends AppCompatActivity implements View
                 if(dao.insertUsuario(u)){
                     Intent i = new Intent(RegisterAvanzado2Activity.this, LoginActivity.class);
                     startActivity(i);
-                    Toast.makeText(this,"Registro Exitoso",Toast.LENGTH_LONG).show();
                     finish();
                 } else{
                     Intent i = new Intent(RegisterAvanzado2Activity.this, LoginActivity.class);

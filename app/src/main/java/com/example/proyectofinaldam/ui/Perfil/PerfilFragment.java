@@ -55,7 +55,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         btnEditar.setOnClickListener(this);
 
         if(u.getGenero()==0){tvWelcome.setText("Bienvenido");}
-        else {tvWelcome.setText("Bienvenida");}
+        else if(u.getGenero()==1){tvWelcome.setText("Bienvenida");}
 
         tvUser = view.findViewById(R.id.TV_user);
         tvUser.setText(u.getNombre() + " " +u.getApellidos());

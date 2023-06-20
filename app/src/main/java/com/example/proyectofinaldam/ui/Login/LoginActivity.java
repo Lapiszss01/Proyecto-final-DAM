@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(this,"ERROR: Campos vacios",Toast.LENGTH_LONG).show();
                 }else if(dao.login(u,p)==1){
                     Usuario user = dao.getUsuario(u,p);
-                    Toast.makeText(this,"Login funcional",Toast.LENGTH_LONG).show();
                     Intent i2 = new Intent(LoginActivity.this, MainHubActivity.class);
                     i2.putExtra("Id", user.getId());
                     startActivity(i2);
